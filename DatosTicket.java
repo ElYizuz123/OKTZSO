@@ -33,7 +33,6 @@ public abstract class DatosTicket{
 		ivaTotal=subTotal*0.16;
 		total=subTotal+ivaTotal;
 	}
-	protected void sumarIva(double )
 	protected void sumarSubTotal(double subTotal){
 		this.subTotal+=subTotal;
 	}
