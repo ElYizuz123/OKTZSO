@@ -8,24 +8,20 @@ public class Ap{
 		do{
 			dato2=mostrarMenu();
 			switch(dato2){
-				case 1: okzo.mostrarTrabajadores();break;
-				case 2: okzo.capturarTrabajador();break;
-				case 3: //okzo.buscarTrabajador();
-				break;
-				case 4: okzo.editarTrabajador();
-				break;
-				case 11: okzo.mostrarProveedores();break;
-				case 12: okzo.capturarProveedor();break;
-				case 13: //okzo.buscarProveedor();
-				break;
-				case 14: okzo.editarProveedor();
-				break;
-				case 21: okzo.mostrarProveedores();break;
-				case 31: okzo.mostrarClientes();break;
-				case 32: okzo.capturarCliente();break;
-				case 34: okzo.editarCliente();break;
-				case 42:okzo.capturarVenta();break;
-				case 41:okzo.mostrarVentas();break; 
+				case 1: okzo.mostrarTrabajadores(); break;
+				case 2: okzo.capturarTrabajador(); break;
+				case 3: //okzo.buscarTrabajador(); break;
+				case 4: okzo.editarTrabajador(); break;
+				case 11: okzo.mostrarProveedores(); break;
+				case 12: okzo.capturarProveedor(); break;
+				case 13: //okzo.buscarProveedor(); break;
+				case 14: okzo.editarProveedor(); break;
+				case 21: okzo.mostrarProveedores(); break;
+				case 31: okzo.mostrarClientes(); break;
+				case 32: okzo.capturarCliente(); break;
+				case 34: okzo.editarCliente(); break;
+				case 42:okzo.capturarVenta(); break;
+				case 41:okzo.mostrarVentas(); break; 
 			}
 		}while(dato2!=0);
 		okzo.guardarProveedor();
@@ -68,6 +64,7 @@ public class Ap{
 			}
 			else if(dato==3){
 				System.out.println("1.-MOSTRAR      2.-CAPTURAR");
+				System.out.print("Opcion: ");
 				return 40+leer.nextInt();
 			}
 			break;
