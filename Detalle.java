@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Detalle extends Producto{
+public class Detalle {
 	private int tipoServicio;
 	private String idProducto;
 	private double precio;
@@ -11,22 +11,19 @@ public class Detalle extends Producto{
 	private String servicioPagar;
 	private double dinero;
 	private double total;
-	
-	
-	public Detalle(int tipoServicio, String idProducto, double precio,int cantidad, int tipoPago, String numeroTarjeta){
-		super(tipoPago, numeroTarjeta);
+
+
+	public Detalle(int tipoServicio, String idProducto, double precio,int cantidad){
 		this.tipoServicio=tipoServicio;
 		this.idProducto=idProducto;
 		this.precio=precio;
 	}
-	
+
 	public Detalle(){}
-	
-	@Override
+
 	public void mostrar(){
 		System.out.println("----------Detalle----------");
 		System.out.println("Tipo de Servicio: "+tipoServicio2);
-		super.mostrar();
 		if(tipoServicio==1){
 			System.out.println(idProducto+" ("+cantidadP+")"+" ----------- "+total);
 		}
@@ -46,8 +43,8 @@ public class Detalle extends Producto{
 				break;
 			}
 		}
-		
-		
+
+
 	}
 	public String queSoy(){
 		return "Detalle";
@@ -73,18 +70,18 @@ public class Detalle extends Producto{
 					tipoServicio2="Recarga telefonica";
 					tipoServicioI=1;
 					telefono=ser.getTelefono();
-					dinero=ser.getDinero();
+					dinero=ser.getTotal();
 					total=dinero;
 					break;
-				case 2: 
+				case 2:
 					tipoServicio2="Servicio a pagar";
-					dinero=ser.getDinero();
+					dinero=ser.getTotal();
 					tipoServicioI=2;
 					switch(ser.getServicioPagar()){
 						case 1:
 							servicioPagar = "Megacable";
 						break;
-						case 2: 
+						case 2:
 							servicioPagar="TotalPlay";
 						break;
 						case 3:
@@ -97,14 +94,14 @@ public class Detalle extends Producto{
 					tipoServicio2="Deposito";
 					tipoServicioI=3;
 					cuentaReceptora=ser.getCuentaReceptora();
-					dinero=ser.getDinero();
+					dinero=ser.getTotal();
 					total=dinero;
 					break;
 			}
 		}
-		
+
 	}
-	
+
 	public int getCantidadP(){
         return cantidadP;
     }

@@ -1,65 +1,56 @@
 import java.util.Scanner;
-public class Servicio extends Producto{
+public class Servicio{
 	private String cuentaReceptora;
 	private String telefono;
 	private int tipoServicio;
 	private int servicioPagar;
-	private double dinero;
-	
-	public Servicio(String cuentaReceptora, String telefono, int tipoServicio, int tipoPago, String numeroTarjeta, double dinero) {
-        super(tipoPago, numeroTarjeta);
+	private double total;
+
+	public Servicio(String cuentaReceptora, String telefono, int tipoServicio, int tipoPago) {
+        this.total=total;
         this.cuentaReceptora=cuentaReceptora;
         this.telefono=telefono;
         this.tipoServicio=tipoServicio;
-		this.dinero=dinero;
     }
 	public Servicio(){
-		
+
 	}
-	
+
 	public String queSoy(){
 		return "Servicio";
 	}
-	
+
 	public void mostrar(){
-		
+
 	}
-	@Override
 	public void capturar(){
 		Scanner leer=new Scanner(System.in);
 		System.out.println("ELIGE EL SERVICIO  1.- RECARGA      2.- PAGO     3.-DEPOSITO");
 		tipoServicio=leer.nextInt();leer.nextLine();
-		
+
 		switch(tipoServicio){
-			case 1: System.out.print("\nTelefono: "); 
+			case 1: System.out.print("\nTelefono: ");
 					telefono=leer.nextLine();
-					System.out.print("\nSaldo: "); 
-					dinero=leer.nextDouble();
+					System.out.print("\nSaldo: ");
+					total=leer.nextDouble();
 					break;
-			
+
 			case 2: System.out.println("\nELIGE EL SERVICIO A PAGAR\n1.- MEGACABLE  2.- TOTALPLAY  3.- SKY");
-					System.out.print("Opcion: "); 
+					System.out.print("Opcion: ");
 					servicioPagar=leer.nextInt();
-					System.out.print("\nCantidad a pagar: "); 
-					dinero=leer.nextDouble();
+					System.out.print("\nCantidad a pagar: ");
+					total=leer.nextDouble();
 					break;
-			
+
 			case 3:
 					System.out.print("\nReferencia: ");
 					cuentaReceptora=leer.nextLine();
-					System.out.print("\nDeposito: "); 
-					dinero=leer.nextDouble();
-					break; 
+					System.out.print("\nDeposito: ");
+					total=leer.nextDouble();
+					break;
 		}
-		super.capturar();
 	}
-	
-	public double getDinero(){
-        return dinero;
-    }
-    public void setDinero(double dinero){
-        this.dinero=dinero;
-    }
+
     public String getCuentaReceptora(){
         return cuentaReceptora;
     }
@@ -84,5 +75,11 @@ public class Servicio extends Producto{
     public void setServicioPagar(int servicioPagar){
         this.servicioPagar=servicioPagar;
     }
-	
+		public double getTotal(){
+			return total;
+		}
+		public void setTotal(double total){
+			this.total=total;
+		}
+
 }
