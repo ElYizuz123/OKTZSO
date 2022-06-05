@@ -29,8 +29,8 @@ public abstract class DatosTicket{
 
 	protected void mostrar(){
 		LocalDateTime tiempo = LocalDateTime.now();
-		String fecha = tiempo.format(forFecha);
-		String hora = tiempo.format(forHora);
+		fecha = tiempo.format(forFecha);
+		hora = tiempo.format(forHora);
 		
 		System.out.print("\nFOLIO DE VENTA: "+folio);
 		System.out.println("      TOTAL: $"+total);
