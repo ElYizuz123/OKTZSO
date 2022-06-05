@@ -25,7 +25,8 @@ public class Servicio{
 	}
 	public void capturar(){
 		Scanner leer=new Scanner(System.in);
-		System.out.println("ELIGE EL SERVICIO  1.- RECARGA      2.- PAGO     3.-DEPOSITO");
+		System.out.println("1.- RECARGA      2.- PAGO     3.-DEPOSITO");
+		System.out.print("Opcion: ");
 		tipoServicio=leer.nextInt();leer.nextLine();
 
 		switch(tipoServicio){
