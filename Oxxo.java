@@ -11,7 +11,6 @@ public class Oxxo{
 	private int cPersonas=0;
 	private Ticket ventas[]=new Ticket[10000];
 	private int cVentas=0;
-
 	public Oxxo(){
 	}
 	public Oxxo(String rfc, String telefono, String paginaWeb){
@@ -241,5 +240,5 @@ public class Oxxo{
 	public void setPaginaWeb(String paginaWeb){
 		this.paginaWeb=paginaWeb;
 	}
-
+}
 }
