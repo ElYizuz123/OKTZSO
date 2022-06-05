@@ -1,44 +1,42 @@
+
 import java.util.Scanner;
-public class Inventario implements interface{
-	private String idProducto;
+public class Inventario{
+	private Mercancia productos[]=new Mercancia[1000];
+	private int cProductos;
 	private int cantidad;
 	
-	public Inventario (String idProducto, int cantidad){
-		this.idProducto=idProducto;
-		this.cantidad=cantidad;
-	}
-	
-	public Inventario{
+	public Inventario (){
 		
 	}
-	
-	public void mostrar(){
-		System.out.println("Inventario:");
-		System.out.println("ID del producto: " +idProducto);
-		System.out.println("Cantidad: "+cantidad);
+	public void capturarNuevoProducto(){
+		productos[cProductos]=new Mercancia();
+		productos[cProductos].capturar();
+		cProductos++;
 	}
-	
-	public void capturar(){
-		Scanner scn = new Scanner (System.in);
-		System.out.println("Capturar Inventario:");
-		System.out.println("ID del producto: "); idProducto=scn.nextLine();
-		System.out.println("Cantidad: "); cantidad=scn.nextInt();
+	public void sumarProductos(){
+		Scanner ent=new Scanner(System.in);
+		String buscarId;
+		boolean comprobador=false;
+		System.out.print("INSERTE EL ID DEL PRODUCTO: ");buscarId=ent.nextLine();
+		for(int i=0; i<cProductos; i++){
+			if(productos[i].getIdProducto().contains(buscarId)){
+				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
+				productos[i].setCantidad(productos[i].getCantidad()+cantidad);
+				comprobador =true;
+				break;
+			}
+			else
+				comprobador=false;
+		}
+		if(comprobador=false){
+			int opcion;
+			System.out.println("El producto capturado no existe en nuestra lista: 1.-CAPTURAR UNO NUEVO   2.-VOLVER A INTENTAR");opcion=ent.nextInt();
+			if(opcion==1){
+				capturarNuevoProducto();
+			}
+			else{
+				sumarProductos();
+			}
+		}
 	}
-	
-	
-	
-	public Void setIdProducto(String idProducto){
-		this.idProducto=idProducto;
-	}
-	public String getIdProducto(){
-		return idProducto;
-	}
-	
-	public Void setCantidad(int cantidad){
-		this.cantidad=cantidad;
-	}
-	public int getCantidad(){
-		return cantidad;
-	}	
-	
 }
