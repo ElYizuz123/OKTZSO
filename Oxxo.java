@@ -166,6 +166,18 @@ public class Oxxo{
 			
 		}
 	}
+	public void mostrarProveedores(String cadena){
+		String megaCadena;
+		Proveedor p=new Proveedor();
+		for(int i=0; i<cPersonas; i++){
+			if(personas[i].queSoy().equals("Proveedor"))
+				p=(Proveedor)personas[i];
+				megaCadena=p.getDistribuidora()+p.getNombre()+p.getDireccion()+p.getCorreo()+p.getTelefono()+p.getRfc();
+			if(megaCadena.contains(cadena))
+				p.mostrar();
+		}
+
+	}
 	
 	public void capturarTrabajador(){
 		personas[cPersonas]=new Trabajador();
