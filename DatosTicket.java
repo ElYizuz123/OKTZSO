@@ -29,7 +29,6 @@ public abstract class DatosTicket{
 		//System.out.println("Hora       : "+hora);
 	}
 	protected void capturar(){
-
 		ivaTotal=sumarIva*0.16;
 		total=subTotal+ivaTotal;
 	}
