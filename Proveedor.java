@@ -27,7 +27,7 @@ public class Proveedor extends Persona{
 	
 	
 	
-	public String distribuidora(){
+	public String getDistribuidora(){
 		return distribuidora;
 	}
 	public void distribuidora(String distribuidora){

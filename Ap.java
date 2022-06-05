@@ -7,6 +7,8 @@ public class Ap{
 		Oxxo okzo = new Oxxo("NHB770831BW3", "8183202020", "https://www.oxxo.com");
 		do{
 			dato2=mostrarMenu();
+			Scanner leer=new Scanner(System.in);
+			String cadena;
 			switch(dato2){
 				case 1: okzo.mostrarTrabajadores(); break;
 				case 2: okzo.capturarTrabajador(); break;
@@ -14,7 +16,7 @@ public class Ap{
 				case 4: okzo.editarTrabajador(); break;
 				case 11: okzo.mostrarProveedores(); break;
 				case 12: okzo.capturarProveedor(); break;
-				case 13: //okzo.buscarProveedor(); break;
+				case 13: cadena=leer.nextLine();okzo.mostrarProveedores(cadena);System.out.print("Inserte la palabra a buscar: ");break;
 				case 14: okzo.editarProveedor(); break;
 				case 21: okzo.mostrarProveedores(); break;
 				case 31: okzo.mostrarClientes(); break;
