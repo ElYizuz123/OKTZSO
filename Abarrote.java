@@ -18,9 +18,7 @@ public class Abarrote{
 		return "Abarrote";
 	}
 	public void mostrar(){
-		System.out.println("\nID DEL PRODUCTO: " +idProductoComprado);
-		System.out.println("PRECIO: $"+precio);
-		System.out.println("CANTIDAD: "+cantidad);
+		System.out.println(idProductoComprado+"           "+cantidad+"      "+total);
 	 }
 	public void capturar(){
 		Scanner scn = new Scanner (System.in);
