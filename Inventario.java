@@ -40,4 +40,24 @@ public class Inventario{
 			}
 		}
 	}
+	public void restarProductos(){
+		Scanner ent=new Scanner(System.in);
+		String buscarId;
+		boolean comprobador=false;
+		System.out.print("INSERTE EL ID DEL PRODUCTO: ");buscarId=ent.nextLine();
+		for(int i=0; i<cProductos; i++){
+			if(productos[i].getIdProducto().contains(buscarId)){
+				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
+				productos[i].setCantidad(productos[i].getCantidad()-cantidad);
+				comprobador =true;
+				break;
+			}
+			else
+				comprobador=false;
+		}
+		if(comprobador=false){
+			System.out.println("El producto capturado no existe en nuestra lista vuelva a intentar");
+			restarProductos();
+		}
+	}
 }
