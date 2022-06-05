@@ -33,7 +33,7 @@ public class Ticket extends DatosTicket{
 	public void capturar(){
 		Scanner ent=new Scanner(System.in);
 		Detalle det=new Detalle();
-		System.out.print("\nRFC del trabajador: ");rfcTrabajador=ent.nextLine();
+		System.out.print("\nRFC DEL TRABAJADOR: ");rfcTrabajador=ent.nextLine();
 		int detalle=5;
 		do{
 			detalles[cDetalles]=new Detalle();
@@ -53,7 +53,7 @@ public class Ticket extends DatosTicket{
 		System.out.print("Opcion: ");
 		tipoPago=ent.nextInt();ent.nextLine();
 		if(tipoPago==2){
-			System.out.print("Numero de tarjeta: ");
+			System.out.print("NUMERO DE TARJETA: ");
 			numeroTarjeta=ent.nextLine();
 		}
 	}
