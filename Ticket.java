@@ -17,6 +17,7 @@ public class Ticket extends DatosTicket{
 	}
 	public void mostrar(){
 		System.out.println("\n----------------TICKET-----------------");
+		super.mostrarFecha();
 		System.out.println("RFC TRABAJADOR: "+rfcTrabajador+"\n");
 		for(int i=0; i<cDetalles; i++){
 			if(detalles[i].getTipoServicio2().equals("Compra de producto")){
