@@ -16,19 +16,25 @@ public class Ticket extends DatosTicket{
 
 	}
 	public void mostrar(){
-		System.out.println("RFC del trabajador que le atendio: "+rfcTrabajador);
+		System.out.println("\n----------------TICKET-----------------");
+		System.out.println("RFC TRABAJADOR: "+rfcTrabajador+"\n");
 		for(int i=0; i<cDetalles; i++){
-			detalles[i].mostrar();
+			if(detalles[i].getTipoServicio2().equals("Compra de producto")){
+				detalles[i].mostrar(true);
+			}
+			else{
+				detalles[i].mostrar(false);
+			}
 		}
 		super.mostrar();
 		switch(tipoPago){
-			case 1: System.out.println("Tipo de pago: EFECTIVO");
+			case 1: System.out.println("\nEFECTIVO M.N");
 			break;
 
-			case 2: System.out.println("Tipo de pago: TARJETA");
+			case 2: System.out.println("\nPAGO ELECTRONICO");
 			break;
 		}
-
+		System.out.println("---------------------------------------");
 	}
 	public void capturar(){
 		Scanner ent=new Scanner(System.in);
