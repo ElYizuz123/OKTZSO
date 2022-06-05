@@ -7,7 +7,9 @@ public class Inventario implements Interface{
 		this.idProducto=idProducto;
 		this.cantidad=cantidad;
 	}
-
+	public String queSoy(){
+		return "Inventario";	
+	}
 	public Inventario(){
 
 	}
