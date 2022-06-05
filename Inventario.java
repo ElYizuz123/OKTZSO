@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+
 public class Inventario{
 	private Mercancia productos[]=new Mercancia[1000];
 	private int cProductos;
@@ -40,3 +41,6 @@ public class Inventario{
 		}
 	}
 }
+
+
+

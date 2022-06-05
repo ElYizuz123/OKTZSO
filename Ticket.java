@@ -40,7 +40,7 @@ public class Ticket extends DatosTicket{
 		Scanner ent=new Scanner(System.in);
 		Detalle det=new Detalle();
 		System.out.print("\nRFC DEL TRABAJADOR: ");rfcTrabajador=ent.nextLine();
-		int detalle=5;
+		int detalle=0;
 		do{
 			detalles[cDetalles]=new Detalle();
 			detalles[cDetalles].capturar();
