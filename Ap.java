@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Ap{
 	public static void main(String args[]){
 		int dato2;
-		System.out.println("\n\n\n\nBIENVENIDOS");
+		System.out.println("\n\nBIENVENIDOS");
 		System.out.println("\"Para todas tus reuniones OXXO\"");
 		Oxxo okzo = new Oxxo("NHB770831BW3", "8183202020", "https://www.oxxo.com");
 		do{
