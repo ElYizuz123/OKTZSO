@@ -196,13 +196,19 @@ public class Oxxo{
 	}
 	public void capturarProveedor(){
 		personas[cPersonas]=new Proveedor();
+		System.out.println("--------CAPTURA EL PROVEEDOR-------");
 		personas[cPersonas].capturar();
+		System.out.println("-----------------------------------");
 		cPersonas++;
 	}
 	public void mostrarProveedores(){
+		int cont=0;
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Proveedor")){
+				cont++;
+				System.out.println("-------PROVEEDOR "+cont+"-------");
 				personas[i].mostrar();
+				System.out.println("--------------------------------");
 			}
 		}
 	}

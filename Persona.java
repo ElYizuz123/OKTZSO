@@ -5,17 +5,17 @@ public abstract class Persona implements Interface, Serializable{
 	protected String direccion;
 	protected String correo;
 	protected String telefono;
-	
+
 	public Persona(){
 	}
-	
+
 	public Persona(String nombre, String direccion, String correo, String telefono) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.correo = correo;
         this.telefono = telefono;
     }
-	
+
 	public abstract String queSoy();
 	public void capturar(){
 		Scanner leer= new Scanner(System.in);
@@ -63,5 +63,5 @@ public abstract class Persona implements Interface, Serializable{
         this.telefono = telefono;
     }
 
-    
+
 }
