@@ -30,22 +30,22 @@ public class Servicio{
 		tipoServicio=leer.nextInt();leer.nextLine();
 
 		switch(tipoServicio){
-			case 1: System.out.print("\nTelefono: ");
+			case 1: System.out.print("Telefono: ");
 							telefono=leer.nextLine();
-							System.out.print("\nSaldo: ");
+							System.out.print("Saldo: ");
 							total=leer.nextDouble();
 							break;
 
 			case 2: System.out.println("\nELIGE EL SERVICIO A PAGAR\n1.- MEGACABLE  2.- TOTALPLAY  3.- SKY");
 							System.out.print("Opcion: ");
 							servicioPagar=leer.nextInt();
-							System.out.print("\nCantidad a pagar: ");
+							System.out.print("Cantidad a pagar: ");
 							total=leer.nextDouble();
 							break;
 
-			case 3: System.out.print("\nReferencia: ");
+			case 3: System.out.print("Referencia: ");
 							cuentaReceptora=leer.nextLine();
-							System.out.print("\nDeposito: ");
+							System.out.print("Deposito: ");
 							total=leer.nextDouble();
 							break;
 		}
