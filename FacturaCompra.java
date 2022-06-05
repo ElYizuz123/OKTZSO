@@ -31,17 +31,17 @@ public class FacturaCompra extends DatosTicket{
 			detallesc[cDetallesc].capturar();
 			super.setSubTotal(detallesc[cDetallesc].getTotal());
 			super.sumarSubTotales();
-			cDetalles++;
+			cDetallesc++;
 			System.out.print("Desea Realizar Otra Compra	1.- Si || 2.-No: ");
 			op=ent.nextInt();
 		}while(op!=2);
 	}
 
 	
-	public String getRfcTrabajador(){
-		return rfcTrabajador;
+	public String getRfcProveedor(){
+		return rfcProveedor;
 	}
-	public void setRfcTrabajador(String rfcTrabajador){
-		this.rfcTrabajador=rfcTrabajador;
+	public void setRfcProveedor(String rfcProveedor){
+		this.rfcProveedor=rfcProveedor;
 	}
 }
