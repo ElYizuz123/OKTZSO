@@ -23,7 +23,7 @@ public class Ap{
 				case 32: okzo.capturarCliente(); break;
 				case 34: okzo.editarCliente(); break;
 				case 42:okzo.capturarVenta(); break;
-				case 41:okzo.mostrarVentas(); break; 
+				case 41:okzo.mostrarVentas(); break;
 			}
 		}while(dato2!=0);
 		okzo.guardarProveedor();
@@ -33,19 +33,19 @@ public class Ap{
 	public static int mostrarMenu(){
 		Scanner leer=new Scanner(System.in);
 		int dato=0;
-		System.out.println("1.- GERENTE      2.-TRABAJADOR      3.-SALIR\n");
+		System.out.println("\n1.- GERENTE      2.-TRABAJADOR      3.-SALIR");
 		System.out.print("Opcion: ");dato=leer.nextInt();
 		switch(dato){
 			case 1:
-				System.out.println("1.-TRABAJADORES       2.-PROVEEDORES      3.-SALIR\n");
+				System.out.println("\n1.-TRABAJADORES       2.-PROVEEDORES      3.-SALIR");
 				System.out.print("Opcion: ");dato=leer.nextInt();
 				if(dato==1){
-					System.out.println("1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR\n");
+					System.out.println("\n1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt();
 					return dato;
 				}
 				else if(dato==2){
-					System.out.println("1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR\n");
+					System.out.println("\n1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt()+10;
 					return dato;
 				}
@@ -54,24 +54,24 @@ public class Ap{
 				}
 			break;
 			case 2:
-			System.out.println("1.-MOSTRAR PROVEEDORES     2.-CLIENTES      3.-VENTA       4.-SALIR\n");
+			System.out.println("\n1.-MOSTRAR PROVEEDORES     2.-CLIENTES      3.-VENTA       4.-SALIR");
 			System.out.print("Opcion: "); dato=leer.nextInt();
 			if(dato==1){
 				return dato+20;
 			}
 			if(dato==2){
-				System.out.println("1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR\n");
+				System.out.println("\n1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt();
 					return dato+30;
 			}
 			else if(dato==3){
-				System.out.println("1.-MOSTRAR      2.-CAPTURAR");
+				System.out.println("\n1.-MOSTRAR      2.-CAPTURAR");
 				System.out.print("Opcion: ");
 				return 40+leer.nextInt();
 			}
 			break;
 			case 3:
-			
+
 			break;
 		}
 		return 0;

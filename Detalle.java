@@ -22,7 +22,7 @@ public class Detalle {
 	public Detalle(){}
 
 	public void mostrar(){
-		System.out.println("----------Detalle----------");
+		System.out.println("----------VENTA----------");
 		System.out.println("Tipo de Servicio: "+tipoServicio2);
 		if(tipoServicio==1){
 			System.out.println(idProducto+" ("+cantidadP+")"+" ----------- "+total);
@@ -52,9 +52,10 @@ public class Detalle {
 	public void capturar(){
 		Abarrote ab=new Abarrote();
 		Servicio ser=new Servicio();
-		System.out.println("----------Capturar Detalle-----------");
+		System.out.println("\n----------CAPTURA LA VENTA-----------");
 		Scanner dato=new Scanner(System.in);
-		System.out.print("Tipo de Servicio:    1.-ABARROTE     2.-SERVICIO   ");tipoServicio=dato.nextInt();
+		System.out.println("\n1.-ABARROTE     2.-SERVICIO");
+		System.out.print("Opcion: "); tipoServicio=dato.nextInt();
 		if(tipoServicio==1){
 			ab.capturar();
 			idProducto=ab.getIdProductoComprado();
@@ -63,41 +64,39 @@ public class Detalle {
 			total=ab.getTotal();
 			tipoServicio2="Compra de producto";
 		}
-		else if(tipoServicio==2){
+		else{
 			ser.capturar();
 			switch(ser.getTipoServicio()){
-				case 1:
-					tipoServicio2="Recarga telefonica";
-					tipoServicioI=1;
-					telefono=ser.getTelefono();
-					dinero=ser.getTotal();
-					total=dinero;
-					break;
-				case 2:
-					tipoServicio2="Servicio a pagar";
-					dinero=ser.getTotal();
-					total=dinero;
-					tipoServicioI=2;
-					switch(ser.getServicioPagar()){
-						case 1:
-							servicioPagar = "Megacable";
-						break;
-						case 2:
-							servicioPagar="TotalPlay";
-						break;
-						case 3:
-							servicioPagar="Skye";
-						break;
-					}
-					total=dinero;
-					break;
-				case 3:
-					tipoServicio2="Deposito";
-					tipoServicioI=3;
-					cuentaReceptora=ser.getCuentaReceptora();
-					dinero=ser.getTotal();
-					total=dinero;
-					break;
+				case 1:	tipoServicio2="Recarga telefonica";
+								tipoServicioI=1;
+								telefono=ser.getTelefono();
+								dinero=ser.getTotal();
+								total=dinero;
+								break;
+
+				case 2: tipoServicio2="Servicio a pagar";
+								dinero=ser.getTotal();
+								total=dinero;
+								tipoServicioI=2;
+								switch(ser.getServicioPagar()){
+									case 1: servicioPagar = "Megacable";
+													break;
+
+									case 2:	servicioPagar = "TotalPlay";
+													break;
+
+									case 3:	servicioPagar = "Sky";
+													break;
+								}
+								total=dinero;
+								break;
+
+				case 3: tipoServicio2="Deposito";
+								tipoServicioI=3;
+								cuentaReceptora=ser.getCuentaReceptora();
+								dinero=ser.getTotal();
+								total=dinero;
+								break;
 			}
 		}
 
@@ -105,10 +104,10 @@ public class Detalle {
 
 	public int getCantidadP(){
         return cantidadP;
-    }
-    public void setCantidadP(int cantidadP){
+  }
+  public void setCantidadP(int cantidadP){
         this.cantidadP=cantidadP;
-    }
+  }
 	public String getTipoServicio2(){
 		return tipoServicio2;
 	}
@@ -135,28 +134,28 @@ public class Detalle {
 	}
 	public double getDinero(){
         return dinero;
-    }
-    public void setDinero(double dinero){
+  }
+  public void setDinero(double dinero){
         this.dinero=dinero;
-    }
-    public String getCuentaReceptora(){
+  }
+  public String getCuentaReceptora(){
         return cuentaReceptora;
-    }
-    public void setCuentaReceptora(String cuentaReceptora){
+  }
+  public void setCuentaReceptora(String cuentaReceptora){
         this.cuentaReceptora=cuentaReceptora;
-    }
-    public String getTelefono(){
+  }
+  public String getTelefono(){
         return telefono;
-    }
-    public void setTelefono(String telefono){
+  }
+  public void setTelefono(String telefono){
         this.telefono=telefono;
-    }
-    public String getServicioPagar(){
+  }
+  public String getServicioPagar(){
         return servicioPagar;
-    }
-    public void setServicioPagar(String servicioPagar){
+  }
+  public void setServicioPagar(String servicioPagar){
         this.servicioPagar=servicioPagar;
-    }
+  }
 	public double getTotal(){
 		return total;
 	}
