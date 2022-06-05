@@ -167,7 +167,7 @@ public class Oxxo{
 		}
 	}
 	public void mostrarProveedores(String cadena){
-		String megaCadena;
+		String megaCadena="";
 		Proveedor p=new Proveedor();
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Proveedor")){
