@@ -33,7 +33,7 @@ public class Ticket extends DatosTicket{
 	public void capturar(){
 		Scanner ent=new Scanner(System.in);
 		Detalle det=new Detalle();
-		System.out.print("RFC del trabajador: ");rfcTrabajador=ent.nextLine();
+		System.out.print("\nRFC del trabajador: ");rfcTrabajador=ent.nextLine();
 		int detalle=5;
 		do{
 			detalles[cDetalles]=new Detalle();
@@ -46,8 +46,9 @@ public class Ticket extends DatosTicket{
 			super.sumarSubtotales();
 			cDetalles++;
 			System.out.println("1.- NUEVA VENTA      2.-SALIR");
+			System.out.print("Opcion: ");
 			detalle=ent.nextInt();ent.nextLine();
-		}while(detalle!=2);
+		} while(detalle!=2);
 		System.out.print("TIPO DE PAGO\n1.- EFECTIVO   2.- TARJETA\n");
 		System.out.print("Opcion: ");
 		tipoPago=ent.nextInt();ent.nextLine();
