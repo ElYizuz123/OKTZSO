@@ -204,7 +204,7 @@ public class Oxxo{
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Proveedor")){
 				cont++;
-				Sytstem.out.println("-------PROVEEDOR "+cont+"-------");
+				System.out.println("-------PROVEEDOR "+cont+"-------");
 				personas[i].mostrar();
 				System.out.println("--------------------------------");
 			}
