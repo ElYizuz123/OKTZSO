@@ -16,7 +16,7 @@ public class Ap{
 				case 4: okzo.editarTrabajador(); break;
 				case 11: okzo.mostrarProveedores(); break;
 				case 12: okzo.capturarProveedor(); break;
-				case 13:cadena=leer.nextLine();okzo.mostrarProveedores(cadena);System.out.print("Inserte la palabra a buscar: ");break;
+				case 13: cadena=leer.nextLine();okzo.mostrarProveedores(cadena);System.out.print("Inserte la palabra a buscar: ");break;
 				case 14: okzo.editarProveedor(); break;
 				case 21: okzo.mostrarProveedores(); break;
 				case 31: okzo.mostrarClientes(); break;
