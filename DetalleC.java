@@ -12,6 +12,9 @@ public class DetalleC implements Interface{
 		this.cantidad=cantidad;
 		this.costo=costo;
 	}
+	public DetalleC(){
+		
+	}
 	public String queSoy(){
 		return "DetalleC";
 	}

@@ -44,7 +44,7 @@ public abstract class DatosTicket{
 	protected void sumarIvas(){
 		ivaTotal+=sumarIva;
 	}
-	protected void sumarSubtotales(){
+	protected void sumarSubTotales(){
 		total+=subTotal;
 	}
 	protected String getFecha(){

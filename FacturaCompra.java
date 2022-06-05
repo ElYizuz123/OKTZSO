@@ -15,8 +15,8 @@ public class FacturaCompra extends DatosTicket{
 	
 	public void mostrar(){
 		System.out.println("\n----------------PRODUCTOS-----------------");
-		for(int i=0; i<cDetalles; i++){
-				detallesc[i].mostrar;
+		for(int i=0; i<cDetallesc; i++){
+				detallesc[i].mostrar();
 		}
 		super.mostrar();
 		System.out.println("---------------------------------------");
@@ -24,7 +24,6 @@ public class FacturaCompra extends DatosTicket{
 	
 	public void capturar(){
 		Scanner ent=new Scanner(System.in);
-		Detalle det=new DetalleC();
 		System.out.print("\nRFC DEL PROVEEDOR: ");rfcProveedor=ent.nextLine();
 		int op=5;
 		do{
