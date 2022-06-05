@@ -21,7 +21,7 @@ public class Ap{
 				case 32: okzo.capturarCliente(); break;
 				case 34: okzo.editarCliente(); break;
 				case 42:okzo.capturarVenta(); break;
-				case 41:okzo.mostrarVentas(); break; 
+				case 41:okzo.mostrarVentas(); break;
 			}
 		}while(dato2!=0);
 		okzo.guardarProveedor();
@@ -63,13 +63,13 @@ public class Ap{
 					return dato+30;
 			}
 			else if(dato==3){
-				System.out.println("1.-MOSTRAR      2.-CAPTURAR");
+				System.out.println("\n1.-MOSTRAR      2.-CAPTURAR");
 				System.out.print("Opcion: ");
 				return 40+leer.nextInt();
 			}
 			break;
 			case 3:
-			
+
 			break;
 		}
 		return 0;
