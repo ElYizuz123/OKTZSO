@@ -32,20 +32,20 @@ public class Servicio{
 		switch(tipoServicio){
 			case 1: System.out.print("\nTELEFONO: ");
 							telefono=leer.nextLine();
-							System.out.print("SALDO: ");
+							System.out.print("SALDO: $");
 							total=leer.nextDouble();
 							break;
 
 			case 2: System.out.println("\n1.- MEGACABLE  2.- TOTALPLAY  3.- SKY");
 							System.out.print("Opcion: ");
 							servicioPagar=leer.nextInt();
-							System.out.print("\nCANTIDAD A PAGAR: ");
+							System.out.print("\nCANTIDAD A PAGAR: $");
 							total=leer.nextDouble();
 							break;
 
 			case 3: System.out.print("\nREFERENCIA: ");
 							cuentaReceptora=leer.nextLine();
-							System.out.print("DEPOSITO: ");
+							System.out.print("DEPOSITO: $");
 							total=leer.nextDouble();
 							break;
 		}
