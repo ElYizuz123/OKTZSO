@@ -22,8 +22,8 @@ public class Ap{
 				case 31: okzo.mostrarClientes(); break;
 				case 32: okzo.capturarCliente(); break;
 				case 34: okzo.editarCliente(); break;
-				case 42:okzo.capturarVenta(); break;
-				case 41:okzo.mostrarVentas(); break;
+				case 42: okzo.capturarVenta(); break;
+				case 41: okzo.mostrarVentas(); break;
 			}
 		}while(dato2!=0);
 		okzo.guardarProveedor();
