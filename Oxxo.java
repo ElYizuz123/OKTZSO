@@ -167,14 +167,18 @@ public class Oxxo{
 		}
 	}
 	public void mostrarProveedores(String cadena){
-		String megaCadena;
+		String megaCadena=null;
 		Proveedor p=new Proveedor();
 		for(int i=0; i<cPersonas; i++){
-			if(personas[i].queSoy().equals("Proveedor"))
+			if(personas[i].queSoy().equals("Proveedor")){
 				p=(Proveedor)personas[i];
 				megaCadena=p.getDistribuidora()+p.getNombre()+p.getDireccion()+p.getCorreo()+p.getTelefono()+p.getRfc();
-			if(megaCadena.contains(cadena))
+			}
+			if(megaCadena.contains(cadena)){
 				p.mostrar();
+				megaCadena="null";
+			}
+			
 		}
 
 	}
