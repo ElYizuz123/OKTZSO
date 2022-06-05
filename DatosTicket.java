@@ -9,10 +9,10 @@ public abstract class DatosTicket{
 	protected double subTotal;
 	protected int folio;
 	protected double sumarIva;
-	
-	DateTimeFormatter forFecha = DateTimeFormatter.ofPattern("dd-MM-yyy");
+
+	DateTimeFormatter forFecha = DateTimeFormatter.ofPattern("dd/MM/yyy");
 	DateTimeFormatter forHora = DateTimeFormatter.ofPattern("HH:mm");
-	
+
 	public DatosTicket(String fecha, String hora, double total, double subTotal, double ivaTotal, int folio){
 	this.fecha=fecha;
 	this.hora=hora;
@@ -26,17 +26,16 @@ public abstract class DatosTicket{
 	public DatosTicket(){
 
 	}
-
-	protected void mostrar(){
+	protected void mostrarFecha(){
 		LocalDateTime tiempo = LocalDateTime.now();
 		fecha = tiempo.format(forFecha);
 		hora = tiempo.format(forHora);
-		
+		System.out.println(fecha+"   		 "+hora);
+	}
+	protected void mostrar(){
 		System.out.print("\nFOLIO DE VENTA: "+folio);
 		System.out.println("      TOTAL: $"+total);
 		System.out.print("IVA INCLUIDO: $"+ivaTotal);
-		System.out.println("\nFecha      : "+fecha);
-		System.out.println("Hora       : "+hora);
 	}
 	protected void capturar(){
 		ivaTotal=sumarIva*0.16;
