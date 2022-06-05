@@ -5,9 +5,9 @@ public class Inventario{
 	private Mercancia productos[]=new Mercancia[1000];
 	private int cProductos;
 	private int cantidad;
-	
+
 	public Inventario (){
-		
+
 	}
 	public void capturarNuevoProducto(){
 		productos[cProductos]=new Mercancia();
@@ -23,7 +23,7 @@ public class Inventario{
 			if(productos[i].getIdProducto().contains(buscarId)){
 				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
 				productos[i].setCantidad(productos[i].getCantidad()+cantidad);
-				comprobador =true;
+				comprobador=true;
 				break;
 			}
 			else
@@ -61,6 +61,3 @@ public class Inventario{
 		}
 	}
 }
-
-
-
