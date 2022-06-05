@@ -24,6 +24,7 @@ public class Oxxo{
 	public void capturarVenta(){
 		ventas[cVentas]=new Ticket();
 		ventas[cVentas].capturar();
+		ventas[cVentas].mostrar();
 		cVentas++;
 	}
 	public void mostrarVentas(){
@@ -65,42 +66,79 @@ public class Oxxo{
 
 	public void editarProveedor(){
 		Scanner ent=new Scanner(System.in);
-		int eliminador;
+		int eliminador, cont=0;
+		System.out.println("\n-------SELECCIONA EL PROVEEDOR A EDITAR-------");
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Proveedor")){
-				System.out.println(personas[i].getNombre()+" Numero "+i);
+				cont++;
+				System.out.println(cont+".- "+personas[i].getNombre().toUpperCase());
 			}
 		}
-		System.out.println("Inserte el numero de dato a eliminar ");
+		System.out.println("----------------------------------------------");
+		cont=0;
+		System.out.print("Opcion: ");
 		eliminador=ent.nextInt();
-		personas[eliminador].capturar();
-
+		for(int j=0; j<cPersonas; j++){
+			if(personas[j].queSoy().equals("Proveedor")){
+				cont++;
+				if(eliminador==cont){
+					System.out.println("\n-------PROVEEDOR "+cont+"-------");
+					personas[j].capturar();
+					System.out.println("-----------------------------");
+				}
+			}
+		}
 	}
 	public void editarTrabajador(){
 		Scanner ent=new Scanner(System.in);
-		int eliminador;
+		int eliminador, cont=0;
+		System.out.println("\n-------SELECCIONA EL TRABAJADOR A EDITAR-------");
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Trabajador")){
-				System.out.println(personas[i].getNombre()+" Numero "+i);
+				cont++;
+				System.out.println(cont+".- "+personas[i].getNombre().toUpperCase());
 			}
 		}
-		System.out.println("Inserte el numero de dato a eliminar ");
+		System.out.println("-----------------------------------------------");
+		cont=0;
+		System.out.print("Opcion: ");
 		eliminador=ent.nextInt();
-		personas[eliminador].capturar();
+		for(int j=0; j<cPersonas; j++){
+			if(personas[j].queSoy().equals("Trabajador")){
+				cont++;
+				if(eliminador==cont){
+					System.out.println("\n-------TRABAJADOR "+cont+"-------");
+					personas[j].capturar();
+					System.out.println("-----------------------------");
+				}
+			}
+		}
 
 	}
 	public void editarCliente(){
 		Scanner ent=new Scanner(System.in);
-		int eliminador;
+		int eliminador, cont=0;
+		System.out.println("\n-------SELECCIONA EL CLIENTE A EDITAR-------");
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Cliente")){
-				System.out.println(personas[i].getNombre()+" Numero "+i);
+				cont++;
+				System.out.println(cont+".- "+personas[i].getNombre().toUpperCase());
 			}
 		}
-		System.out.println("Inserte el numero de dato a eliminar ");
+		System.out.println("--------------------------------------------");
+		cont=0;
+		System.out.print("Opcion: ");
 		eliminador=ent.nextInt();
-		personas[eliminador].capturar();
-
+		for(int j=0; j<cPersonas; j++){
+			if(personas[j].queSoy().equals("Cliente")){
+				cont++;
+				if(eliminador==cont){
+					System.out.println("\n-------CLIENTE "+cont+"-------");
+					personas[j].capturar();
+					System.out.println("-----------------------------");
+				}
+			}
+		}
 	}
 
 	public void guardarTrabajador(){
@@ -166,15 +204,19 @@ public class Oxxo{
 		}
 	}
 	public void mostrarProveedores(String cadena){
+		int cont=0;
 		String megaCadena="";
 		Proveedor p=new Proveedor();
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Proveedor")){
+				cont++;
 				p=(Proveedor)personas[i];
 				megaCadena=p.getDistribuidora()+p.getNombre()+p.getDireccion()+p.getCorreo()+p.getTelefono()+p.getRfc();
 			}
 			if(megaCadena.contains(cadena)){
+				System.out.println("\n-------PROVEEDOR "+cont+"-------");
 				p.mostrar();
+				System.out.println("---------------------------------");
 				megaCadena="";
 			}
 		}
@@ -182,20 +224,26 @@ public class Oxxo{
 	}
 
 	public void capturarTrabajador(){
+		System.out.println("\n--------CAPTURA EL TRABAJADOR-------");
 		personas[cPersonas]=new Trabajador();
 		personas[cPersonas].capturar();
+		System.out.println("--------------------------------------");
 		cPersonas++;
 	}
 	public void mostrarTrabajadores(){
+		int cont=0;
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Trabajador")){
+				cont++;
+				System.out.println("\n-------TRABAJADOR "+cont+"-------");
 				personas[i].mostrar();
+				System.out.println("-----------------------------");
 			}
 		}
 	}
 	public void capturarProveedor(){
 		personas[cPersonas]=new Proveedor();
-		System.out.println("--------CAPTURA EL PROVEEDOR-------");
+		System.out.println("\n--------CAPTURA EL PROVEEDOR-------");
 		personas[cPersonas].capturar();
 		System.out.println("-----------------------------------");
 		cPersonas++;
@@ -205,22 +253,28 @@ public class Oxxo{
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Proveedor")){
 				cont++;
-				System.out.println("-------PROVEEDOR "+cont+"-------");
+				System.out.println("\n-------PROVEEDOR "+cont+"-------");
 				personas[i].mostrar();
 				System.out.println("--------------------------------");
 			}
 		}
 	}
 	public void mostrarClientes(){
+		int cont=0;
 		for(int i=0; i<cPersonas; i++){
 			if(personas[i].queSoy().equals("Cliente")){
+				cont++;
+				System.out.println("\n-------CLIENTE "+cont+"-------");
 				personas[i].mostrar();
+				System.out.println("--------------------------------");
 			}
 		}
 	}
 	public void capturarCliente(){
+		System.out.println("\n--------CAPTURA EL CLIENTE-------");
 		personas[cPersonas]=new Cliente();
 		personas[cPersonas].capturar();
+		System.out.println("---------------------------------");
 		cPersonas++;
 	}
 	public String getRfc(){
