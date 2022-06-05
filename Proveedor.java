@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Proveedor extends Persona{
 	public String distribuidora;
 	private String rfc;
-	public Proveedor(){	
+	public Proveedor(){
 	}
 	public Proveedor(String distribuidora, String nombre, String direccion, String correo, String telefono, String rfc){
 		super( nombre,  direccion, correo, telefono);
@@ -24,9 +24,9 @@ public class Proveedor extends Persona{
 		super.mostrar();
 		System.out.println("Distribuidoras: "+distribuidora);
 	}
-	
-	
-	
+
+
+
 	public String getDistribuidora(){
 		return distribuidora;
 	}
@@ -34,10 +34,10 @@ public class Proveedor extends Persona{
 		this.distribuidora=distribuidora;
 	}
 	public String getRfc() {
-        return rfc;
-    }
+    return rfc;
+  }
 
-    public void setRfc(String rfc) {
-        this.rfc = rfc;
-    }
+  public void setRfc(String rfc) {
+    this.rfc = rfc;
+  }
 }
