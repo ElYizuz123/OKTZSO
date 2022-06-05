@@ -12,6 +12,8 @@ public class Detalle {
 	private double dinero;
 	private double total;
 
+	Abarrote ab=new Abarrote();
+  Servicio ser=new Servicio();
 
 	public Detalle(int tipoServicio, String idProducto, double precio,int cantidad){
 		this.tipoServicio=tipoServicio;
@@ -20,38 +22,21 @@ public class Detalle {
 	}
 
 	public Detalle(){}
+	public void mostrar(){}
 
-	public void mostrar(){
-		System.out.println("----------VENTA----------");
-		System.out.println("Tipo de Servicio: "+tipoServicio2);
-		if(tipoServicio==1){
-			System.out.println(idProducto+" ("+cantidadP+")"+" ----------- "+total);
+	public void mostrar(boolean tipo){
+		if(tipo){
+			ab.mostrar();
 		}
-		else if(tipoServicio==2){
-			switch(tipoServicioI){
-				case 1:
-					System.out.println("Telefono "+telefono);
-					System.out.println("Monto: "+dinero);
-				break;
-				case 2:
-					System.out.println("Servicio a pagar: "+servicioPagar);
-					System.out.println("Monto: "+dinero);
-				break;
-				case 3:
-					System.out.println("Cuenta receptora: "+cuentaReceptora);
-					System.out.println("Monto: "+dinero);
-				break;
-			}
+		else{
+			ser.mostrar();
 		}
-
-
 	}
+
 	public String queSoy(){
 		return "Detalle";
 	}
 	public void capturar(){
-		Abarrote ab=new Abarrote();
-		Servicio ser=new Servicio();
 		System.out.println("\n----------CAPTURA LA VENTA-----------");
 		Scanner dato=new Scanner(System.in);
 		System.out.println("\n1.-ABARROTE     2.-SERVICIO");
@@ -67,31 +52,31 @@ public class Detalle {
 		else{
 			ser.capturar();
 			switch(ser.getTipoServicio()){
-				case 1:	tipoServicio2="Recarga telefonica";
+				case 1:	tipoServicio2="RECARGA TELEFONICA";
 								tipoServicioI=1;
 								telefono=ser.getTelefono();
 								dinero=ser.getTotal();
 								total=dinero;
 								break;
 
-				case 2: tipoServicio2="Servicio a pagar";
+				case 2: tipoServicio2="SERVICIO";
 								dinero=ser.getTotal();
 								total=dinero;
 								tipoServicioI=2;
 								switch(ser.getServicioPagar()){
-									case 1: servicioPagar = "Megacable";
+									case 1: servicioPagar = "MEGACABLE";
 													break;
 
-									case 2:	servicioPagar = "TotalPlay";
+									case 2:	servicioPagar = "TOTALPLAY";
 													break;
 
-									case 3:	servicioPagar = "Sky";
+									case 3:	servicioPagar = "SKY";
 													break;
 								}
 								total=dinero;
 								break;
 
-				case 3: tipoServicio2="Deposito";
+				case 3: tipoServicio2="DEPOSITO";
 								tipoServicioI=3;
 								cuentaReceptora=ser.getCuentaReceptora();
 								dinero=ser.getTotal();
