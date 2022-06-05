@@ -173,11 +173,12 @@ public class Oxxo{
 				p=(Proveedor)personas[i];
 				megaCadena=p.getDistribuidora()+p.getNombre()+p.getDireccion()+p.getCorreo()+p.getTelefono()+p.getRfc();
 			}
-			if(megaCadena.contains(cadena))
+			if(megaCadena.contains(cadena)){
 				p.mostrar();
+				megaCadena="";
+			}
 		}
 
-	}
 	}
 
 	public void capturarTrabajador(){
