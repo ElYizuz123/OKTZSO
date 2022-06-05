@@ -179,6 +179,7 @@ public class Oxxo{
 		}
 
 	}
+	}
 
 	public void capturarTrabajador(){
 		personas[cPersonas]=new Trabajador();
