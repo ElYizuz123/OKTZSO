@@ -24,7 +24,7 @@ public class Abarrote{
 	 }
 	public void capturar(){
 		Scanner scn = new Scanner (System.in);
-		System.out.print("ID DEL PRODUCTO: "); idProductoComprado=scn.nextLine();
+		System.out.print("\nID DEL PRODUCTO: "); idProductoComprado=scn.nextLine();
 		System.out.print("CANTIDAD: ");cantidad=scn.nextInt();
 		total=precio*cantidad;
 	}
