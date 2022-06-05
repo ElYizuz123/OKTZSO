@@ -45,7 +45,7 @@ public class Ticket extends DatosTicket{
 			super.setSubTotal(detalles[cDetalles].getTotal());
 			super.sumarSubtotales();
 			cDetalles++;
-			System.out.println("1.- NUEVA VENTA      2.-SALIR");
+			System.out.println("\n1.- NUEVA VENTA      2.-SALIR");
 			System.out.print("Opcion: ");
 			detalle=ent.nextInt();ent.nextLine();
 		} while(detalle!=2);
