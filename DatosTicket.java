@@ -22,11 +22,11 @@ public abstract class DatosTicket{
 	}
 
 	protected void mostrar(){
-		System.out.println("Fecha      : "+fecha);
-		System.out.println("Hora       : "+hora);
-		System.out.println("Folio      : "+folio);
-		System.out.println("Iva Total  : "+ivaTotal);
-		System.out.println("Total      : "+total);
+		System.out.print("\nFOLIO DE VENTA: "+folio);
+		System.out.println("      TOTAL: $"+total);
+		System.out.print("IVA INCLUIDO: $"+ivaTotal);
+	  //System.out.println("Fecha      : "+fecha);
+		//System.out.println("Hora       : "+hora);
 	}
 	protected void capturar(){
 
