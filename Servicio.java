@@ -25,30 +25,29 @@ public class Servicio{
 	}
 	public void capturar(){
 		Scanner leer=new Scanner(System.in);
-		System.out.println("1.- RECARGA      2.- PAGO     3.-DEPOSITO");
+		System.out.println("\n1.- RECARGA      2.- PAGO     3.-DEPOSITO");
 		System.out.print("Opcion: ");
 		tipoServicio=leer.nextInt();leer.nextLine();
 
 		switch(tipoServicio){
 			case 1: System.out.print("\nTelefono: ");
-					telefono=leer.nextLine();
-					System.out.print("\nSaldo: ");
-					total=leer.nextDouble();
-					break;
+							telefono=leer.nextLine();
+							System.out.print("\nSaldo: ");
+							total=leer.nextDouble();
+							break;
 
 			case 2: System.out.println("\nELIGE EL SERVICIO A PAGAR\n1.- MEGACABLE  2.- TOTALPLAY  3.- SKY");
-					System.out.print("Opcion: ");
-					servicioPagar=leer.nextInt();
-					System.out.print("\nCantidad a pagar: ");
-					total=leer.nextDouble();
-					break;
+							System.out.print("Opcion: ");
+							servicioPagar=leer.nextInt();
+							System.out.print("\nCantidad a pagar: ");
+							total=leer.nextDouble();
+							break;
 
-			case 3:
-					System.out.print("\nReferencia: ");
-					cuentaReceptora=leer.nextLine();
-					System.out.print("\nDeposito: ");
-					total=leer.nextDouble();
-					break;
+			case 3: System.out.print("\nReferencia: ");
+							cuentaReceptora=leer.nextLine();
+							System.out.print("\nDeposito: ");
+							total=leer.nextDouble();
+							break;
 		}
 	}
 
@@ -70,7 +69,7 @@ public class Servicio{
     public void setTipoServicio(int tipoServicio){
         this.tipoServicio=tipoServicio;
     }
-	public int getServicioPagar(){
+	  public int getServicioPagar(){
         return servicioPagar;
     }
     public void setServicioPagar(int servicioPagar){
