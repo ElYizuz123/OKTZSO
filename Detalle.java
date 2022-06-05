@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Detalle {
+public class Detalle implements Interface{
 	private int tipoServicio;
 	private String idProducto;
 	private double precio;
