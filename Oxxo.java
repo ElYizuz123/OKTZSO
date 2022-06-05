@@ -242,4 +242,3 @@ public class Oxxo{
 		this.paginaWeb=paginaWeb;
 	}
 }
-}
