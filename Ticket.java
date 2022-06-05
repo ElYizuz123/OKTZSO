@@ -49,11 +49,11 @@ public class Ticket extends DatosTicket{
 			System.out.print("Opcion: ");
 			detalle=ent.nextInt();ent.nextLine();
 		} while(detalle!=2);
-		System.out.print("TIPO DE PAGO\n1.- EFECTIVO   2.- TARJETA\n");
+		System.out.print("\nTIPO DE PAGO\n1.- EFECTIVO   2.- TARJETA\n");
 		System.out.print("Opcion: ");
 		tipoPago=ent.nextInt();ent.nextLine();
 		if(tipoPago==2){
-			System.out.print("NUMERO DE TARJETA: ");
+			System.out.print("\nNUMERO DE TARJETA: ");
 			numeroTarjeta=ent.nextLine();
 		}
 	}
