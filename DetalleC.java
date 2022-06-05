@@ -3,8 +3,9 @@ public class DetalleC implements Interface{
 	private String idProducto;
 	private int cantidad;
 	private double costo;
+	private double total;
 
-	Inventario inv=New Inventario();
+	Inventario inv=new Inventario();
 
 	public DetalleC(String idProducto, int cantidad, double costo){
 		this.idProducto=idProducto;
@@ -28,6 +29,8 @@ public class DetalleC implements Interface{
 			inv.capturarNuevoProducto();
 		else
 			inv.sumarProductos();
+
+		total=costo*cantidad;
 	}
 
 	public String getIdProducto(){
@@ -47,5 +50,11 @@ public class DetalleC implements Interface{
 	}
 	public void setCosto(int costo){
 		this.costo=costo;
+	}
+	public double getTotal(){
+		return total;
+	}
+	public void setTotal(int total){
+		this.total=total;
 	}
 }
