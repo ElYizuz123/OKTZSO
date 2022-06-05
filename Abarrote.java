@@ -18,14 +18,14 @@ public class Abarrote{
 		return "Abarrote";
 	}
 	public void mostrar(){
-		System.out.println("ID del producto comprado: " +idProductoComprado);
-		System.out.println("Precio: $"+precio);
-		System.out.println("Cantidad: "+cantidad);
+		System.out.println("\nID DEL PRODUCTO: " +idProductoComprado);
+		System.out.println("PRECIO: $"+precio);
+		System.out.println("CANTIDAD: "+cantidad);
 	 }
 	public void capturar(){
 		Scanner scn = new Scanner (System.in);
-		System.out.print("ID del producto comprado: "); idProductoComprado=scn.nextLine();
-		System.out.print("Cantidad: ");cantidad=scn.nextInt();
+		System.out.print("ID DEL PRODUCTO: "); idProductoComprado=scn.nextLine();
+		System.out.print("CANTIDAD: ");cantidad=scn.nextInt();
 		total=precio*cantidad;
 	}
 
