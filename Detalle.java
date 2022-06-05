@@ -22,7 +22,7 @@ public class Detalle {
 	public Detalle(){}
 
 	public void mostrar(){
-		System.out.println("----------Detalle----------");
+		System.out.println("----------VENTA----------");
 		System.out.println("Tipo de Servicio: "+tipoServicio2);
 		if(tipoServicio==1){
 			System.out.println(idProducto+" ("+cantidadP+")"+" ----------- "+total);
@@ -52,9 +52,10 @@ public class Detalle {
 	public void capturar(){
 		Abarrote ab=new Abarrote();
 		Servicio ser=new Servicio();
-		System.out.println("----------Capturar Detalle-----------");
+		System.out.println("----------CAPTURA LA VENTA-----------");
 		Scanner dato=new Scanner(System.in);
-		System.out.print("Tipo de Servicio:    1.-ABARROTE     2.-SERVICIO   ");tipoServicio=dato.nextInt();
+		System.out.print("TIPO DE SERVICIO:\n1.-ABARROTE     2.-SERVICIO   ");
+		System.out.print("Opcion: "); tipoServicio=dato.nextInt();
 		if(tipoServicio==1){
 			ab.capturar();
 			idProducto=ab.getIdProductoComprado();
@@ -86,7 +87,7 @@ public class Detalle {
 							servicioPagar="TotalPlay";
 						break;
 						case 3:
-							servicioPagar="Skye";
+							servicioPagar="Sky";
 						break;
 					}
 					total=dinero;
