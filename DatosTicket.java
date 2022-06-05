@@ -6,21 +6,21 @@ public abstract class DatosTicket{
 	protected double subTotal;
 	protected int folio;
 	protected double sumarIva;
-	
+
 	public DatosTicket(String fecha, String hora, double total, double subTotal, double ivaTotal, int folio){
-	this.fecha=fecha;					   
+	this.fecha=fecha;
 	this.hora=hora;
 	this.total=total;
 	this.subTotal=subTotal;
 	this.ivaTotal=ivaTotal;
 	this.folio=folio;
-						   
+
 	}
-	
+
 	public DatosTicket(){
-		
+
 	}
-	
+
 	protected void mostrar(){
 		System.out.println("Fecha      : "+fecha);
 		System.out.println("Hora       : "+hora);
@@ -29,14 +29,16 @@ public abstract class DatosTicket{
 		System.out.println("Total      : "+total);
 	}
 	protected void capturar(){
-		
-		ivaTotal=subTotal*0.16;
+
+		ivaTotal=sumarIva*0.16;
 		total=subTotal+ivaTotal;
 	}
-	protected void sumarSubTotal(double subTotal){
-		this.subTotal+=subTotal;
+	protected void sumarIvas(){
+		ivaTotal+=sumarIva;
 	}
-	
+	protected void sumarSubtotales(){
+		total+=subTotal;
+	}
 	protected String getFecha(){
 		return fecha;
 	}
@@ -72,5 +74,11 @@ public abstract class DatosTicket{
 	}
 	protected void setFolio(int folio){
 		this.folio=folio;
+	}
+	protected double getSumarIva(){
+		return sumarIva;
+	}
+	protected void setSumarIva(double sumarIva){
+		this.sumarIva=sumarIva;
 	}
 }

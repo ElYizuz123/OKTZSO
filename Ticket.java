@@ -20,7 +20,7 @@ public class Ticket extends DatosTicket{
 		for(int i=0; i<cDetalles; i++){
 			detalles[i].mostrar();
 		}
-		System.out.println("Total: "+super.getTotal());
+		super.mostrar();
 		switch(tipoPago){
 			case 1: System.out.println("Tipo de pago: EFECTIVO");
 			break;
@@ -41,9 +41,11 @@ public class Ticket extends DatosTicket{
 			detalles[cDetalles]=new Detalle();
 			detalles[cDetalles].capturar();
 			if(detalles[cDetalles].getTipoServicio2()=="Compra de producto"){
-				ventaProductos+=detalles[cDetalles].getTotal();
+				super.setSumarIva(detalles[cDetalles].getTotal());
+				super.sumarIvas();
 			}
-			super.sumarSubTotal(detalles[cDetalles].getTotal());
+			super.setSubTotal(detalles[cDetalles].getTotal());
+			super.sumarSubtotales();
 			cDetalles++;
 			System.out.println("Presione:   1.-Para capturar otro detalle      2.-SALIR");
 			detalle=ent.nextInt();ent.nextLine();

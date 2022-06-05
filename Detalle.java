@@ -76,6 +76,7 @@ public class Detalle {
 				case 2:
 					tipoServicio2="Servicio a pagar";
 					dinero=ser.getTotal();
+					total=dinero;
 					tipoServicioI=2;
 					switch(ser.getServicioPagar()){
 						case 1:
