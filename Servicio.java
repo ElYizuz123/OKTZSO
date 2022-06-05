@@ -4,6 +4,7 @@ public class Servicio{
 	private String telefono;
 	private int tipoServicio;
 	private int servicioPagar;
+	private String nombreServicio;
 	private double total;
 
 	public Servicio(String cuentaReceptora, String telefono, int tipoServicio, int tipoPago) {
@@ -21,7 +22,7 @@ public class Servicio{
 	}
 
 	public void mostrar(){
-
+		System.out.println(nombreServicio+"              "+total);
 	}
 	public void capturar(){
 		Scanner leer=new Scanner(System.in);
@@ -34,19 +35,26 @@ public class Servicio{
 							telefono=leer.nextLine();
 							System.out.print("SALDO: $");
 							total=leer.nextDouble();
+							nombreServicio="RECARGA TELEFONICA";
 							break;
 
 			case 2: System.out.println("\n1.- MEGACABLE  2.- TOTALPLAY  3.- SKY");
 							System.out.print("Opcion: ");
 							servicioPagar=leer.nextInt();
+							switch(servicioPagar){
+								case 1: nombreServicio="SERVICIO MEGACABLE"; break;
+								case 2: nombreServicio="SERVICIO TOTALPLAY"; break;
+								case 3: nombreServicio="SERVICIO SKY"; break;
+							}
 							System.out.print("\nCANTIDAD A PAGAR: $");
 							total=leer.nextDouble();
 							break;
 
 			case 3: System.out.print("\nREFERENCIA: ");
 							cuentaReceptora=leer.nextLine();
-							System.out.print("DEPOSITO: $");
+							System.out.print("MONTO: $");
 							total=leer.nextDouble();
+							nombreServicio="DEPOSITO BANCARIO";
 							break;
 		}
 	}
