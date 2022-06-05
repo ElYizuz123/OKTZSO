@@ -11,8 +11,8 @@ public class Oxxo{
 	private int cPersonas=0;
 	private Ticket ventas[]=new Ticket[10000];
 	private int cVentas=0;
-	
-	public Oxxo(){	
+
+	public Oxxo(){
 	}
 	public Oxxo(String rfc, String telefono, String paginaWeb){
 		this.rfc=rfc;
@@ -38,7 +38,7 @@ public class Oxxo{
 		try{
 			salidaP= new FileOutputStream("Proveedores.dat");
 			oP= new ObjectOutputStream(salidaP);
-			for(int i=0; i<cPersonas; i++){	
+			for(int i=0; i<cPersonas; i++){
 				if(personas[i].queSoy().equals("Proveedor"))
 					oP.writeObject(personas[i]);
 			}
@@ -56,11 +56,11 @@ public class Oxxo{
 			personas[cPersonas]=(Proveedor)oP.readObject();
 			while(personas[cPersonas]!=null){
 				cPersonas++;
-				personas[cPersonas]=(Proveedor)oP.readObject();	
+				personas[cPersonas]=(Proveedor)oP.readObject();
 			}
 		}
 		catch(Exception e){
-			
+
 		}
 	}
 
@@ -75,7 +75,7 @@ public class Oxxo{
 		System.out.println("Inserte el numero de dato a eliminar ");
 		eliminador=ent.nextInt();
 		personas[eliminador].capturar();
-		
+
 	}
 	public void editarTrabajador(){
 		Scanner ent=new Scanner(System.in);
@@ -88,7 +88,7 @@ public class Oxxo{
 		System.out.println("Inserte el numero de dato a eliminar ");
 		eliminador=ent.nextInt();
 		personas[eliminador].capturar();
-		
+
 	}
 	public void editarCliente(){
 		Scanner ent=new Scanner(System.in);
@@ -101,16 +101,16 @@ public class Oxxo{
 		System.out.println("Inserte el numero de dato a eliminar ");
 		eliminador=ent.nextInt();
 		personas[eliminador].capturar();
-		
+
 	}
-	
+
 	public void guardarTrabajador(){
 		FileOutputStream salidaP=null;
 		ObjectOutputStream oP=null;
 		try{
 			salidaP= new FileOutputStream("Trabajadores.dat");
 			oP= new ObjectOutputStream(salidaP);
-			for(int i=0; i<cPersonas; i++){	
+			for(int i=0; i<cPersonas; i++){
 				if(personas[i].queSoy().equals("Trabajador"))
 					oP.writeObject(personas[i]);
 			}
@@ -128,11 +128,11 @@ public class Oxxo{
 			personas[cPersonas]=(Trabajador)oP.readObject();
 			while(personas[cPersonas]!=null){
 				cPersonas++;
-				personas[cPersonas]=(Trabajador)oP.readObject();	
+				personas[cPersonas]=(Trabajador)oP.readObject();
 			}
 		}
 		catch(Exception e){
-			
+
 		}
 	}
 	public void guardarCliente(){
@@ -141,7 +141,7 @@ public class Oxxo{
 		try{
 			salidaP= new FileOutputStream("Clientes.dat");
 			oP= new ObjectOutputStream(salidaP);
-			for(int i=0; i<cPersonas; i++){	
+			for(int i=0; i<cPersonas; i++){
 				if(personas[i].queSoy().equals("Cliente"))
 					oP.writeObject(personas[i]);
 			}
@@ -159,26 +159,27 @@ public class Oxxo{
 			personas[cPersonas]=(Cliente)oP.readObject();
 			while(personas[cPersonas]!=null){
 				cPersonas++;
-				personas[cPersonas]=(Cliente)oP.readObject();	
+				personas[cPersonas]=(Cliente)oP.readObject();
 			}
 		}
 		catch(Exception e){
-			
+
 		}
 	}
 	public void mostrarProveedores(String cadena){
 		String megaCadena;
 		Proveedor p=new Proveedor();
 		for(int i=0; i<cPersonas; i++){
-			if(personas[i].queSoy().equals("Proveedor"))
+			if(personas[i].queSoy().equals("Proveedor")){
 				p=(Proveedor)personas[i];
 				megaCadena=p.getDistribuidora()+p.getNombre()+p.getDireccion()+p.getCorreo()+p.getTelefono()+p.getRfc();
+			}
 			if(megaCadena.contains(cadena))
 				p.mostrar();
 		}
 
 	}
-	
+
 	public void capturarTrabajador(){
 		personas[cPersonas]=new Trabajador();
 		personas[cPersonas].capturar();
@@ -233,5 +234,5 @@ public class Oxxo{
 	public void setPaginaWeb(String paginaWeb){
 		this.paginaWeb=paginaWeb;
 	}
-	
+
 }
