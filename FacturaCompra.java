@@ -22,13 +22,13 @@ public class FacturaCompra extends DatosTicket{
 		System.out.println("---------------------------------------");
 	}
 	
-	public void capturar(){
+	public void capturar(Inventario inv){
 		Scanner ent=new Scanner(System.in);
 		System.out.print("\nRFC DEL PROVEEDOR: ");rfcProveedor=ent.nextLine();
 		int op=5;
 		do{
 			detallesc[cDetallesc]=new DetalleC(); 
-			detallesc[cDetallesc].capturar();
+			detallesc[cDetallesc].capturar(inv);
 			super.setSubTotal(detallesc[cDetallesc].getTotal());
 			super.sumarSubTotales();
 			cDetallesc++;

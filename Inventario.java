@@ -5,13 +5,15 @@ public class Inventario{
 	private Mercancia productos[]=new Mercancia[1000];
 	private int cProductos;
 	private int cantidad;
-
+	private double precio;
+	private double costo;
 	public Inventario (){
 
 	}
 	public void capturarNuevoProducto(){
 		productos[cProductos]=new Mercancia();
 		productos[cProductos].capturar();
+		costo=productos[cProductos].getCosto();
 		cProductos++;
 	}
 	public void sumarProductos(){
@@ -23,6 +25,7 @@ public class Inventario{
 			if(productos[i].getIdProducto().contains(buscarId)){
 				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
 				productos[i].setCantidad(productos[i].getCantidad()+cantidad);
+				costo=productos[i].getCosto();
 				comprobador=true;
 				break;
 			}
@@ -49,6 +52,7 @@ public class Inventario{
 			if(productos[i].getIdProducto().contains(buscarId)){
 				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
 				productos[i].setCantidad(productos[i].getCantidad()-cantidad);
+				precio=productos[i].getPrecio();
 				comprobador =true;
 				break;
 			}
@@ -59,5 +63,11 @@ public class Inventario{
 			System.out.println("El producto capturado no existe en nuestra lista vuelva a intentar");
 			restarProductos();
 		}
+	}
+	public double getPrecio(){
+		return precio;
+	}
+	public double getCosto(){
+		return costo;
 	}
 }

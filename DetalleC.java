@@ -5,7 +5,6 @@ public class DetalleC implements Interface{
 	private double costo;
 	private double total;
 
-	Inventario inv=new Inventario();
 
 	public DetalleC(String idProducto, int cantidad, double costo){
 		this.idProducto=idProducto;
@@ -19,20 +18,22 @@ public class DetalleC implements Interface{
 		return "DetalleC";
 	}
 
-  public void mostrar(){}
+	public void mostrar(){}
 
 	public void capturar(){
+		
+	}
+	public void capturar(Inventario inv){
 		Scanner leer=new Scanner(System.in);
 		int opcion;
 		System.out.println("----------CAPTURA LA COMPRA----------");
 		System.out.print("1.- AGREGAR PRODUCTO NUEVO      2.-AGREGAR PRODUCTO EXISTENTE");
 		opcion=leer.nextInt();
-
 		if(opcion==1)
 			inv.capturarNuevoProducto();
 		else
 			inv.sumarProductos();
-
+		costo=inv.getCosto();
 		total=costo*cantidad;
 	}
 

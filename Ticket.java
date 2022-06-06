@@ -37,14 +37,14 @@ public class Ticket extends DatosTicket{
 		}
 		System.out.println("---------------------------------------");
 	}
-	public void capturar(){
+	public void capturar(Inventario inv){
 		Scanner ent=new Scanner(System.in);
 		Detalle det=new Detalle();
 		System.out.print("\nRFC DEL TRABAJADOR: ");rfcTrabajador=ent.nextLine();
 		int detalle=0;
 		do{
 			detalles[cDetalles]=new Detalle();
-			detalles[cDetalles].capturar();
+			detalles[cDetalles].capturar(inv);
 			if(detalles[cDetalles].getTipoServicio2()=="Compra de producto"){
 				super.setSumarIva(detalles[cDetalles].getTotal());
 				super.sumarIvas();

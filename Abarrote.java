@@ -20,9 +20,10 @@ public class Abarrote{
 	public void mostrar(){
 		System.out.println(idProductoComprado+"           "+cantidad+"      "+total);
 	 }
-	public void capturar(){
+	public void capturar(Inventario inv){
 		Scanner scn = new Scanner (System.in);
-		System.out.print("\nID DEL PRODUCTO: "); idProductoComprado=scn.nextLine();
+		inv.restarProductos();
+		precio=inv.getPrecio();
 		System.out.print("CANTIDAD: ");cantidad=scn.nextInt();
 		total=precio*cantidad;
 	}

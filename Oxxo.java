@@ -11,8 +11,12 @@ public class Oxxo{
 	private int cPersonas=0;
 	private Ticket ventas[]=new Ticket[10000];
 	private int cVentas=0;
+	private FacturaCompra compras[]=new FacturaCompra[10000];
+	private int cCompras=0;
+	private Inventario inv = new Inventario();
 	public Oxxo(){
 	}
+	
 	public Oxxo(String rfc, String telefono, String paginaWeb){
 		this.rfc=rfc;
 		this.telefono=telefono;
@@ -21,9 +25,15 @@ public class Oxxo{
 		cargarClientes();
 		cargarTrabajadores();
 	}
+	public void capturarCompras(){
+		compras[cCompras]=new FacturaCompra();
+		compras[cCompras].capturar(inv);
+		compras[cCompras].mostrar();
+		cCompras++;
+	}
 	public void capturarVenta(){
 		ventas[cVentas]=new Ticket();
-		ventas[cVentas].capturar();
+		ventas[cVentas].capturar(inv);
 		ventas[cVentas].mostrar();
 		cVentas++;
 	}
