@@ -35,10 +35,10 @@ public abstract class DatosTicket{
 	protected void mostrar(){
 		System.out.print("\nFOLIO DE VENTA: "+folio);
 		System.out.println("      TOTAL: $"+total);
-		System.out.print("IVA INCLUIDO: $"+ivaTotal);
+		System.out.println("IVA INCLUIDO: $"+ivaTotal);
 	}
 	protected void capturar(){
-		ivaTotal=sumarIva*0.16;
+		ivaTotal=ivaTotal*0.16;
 		total=subTotal+ivaTotal;
 	}
 	protected void sumarIvas(){

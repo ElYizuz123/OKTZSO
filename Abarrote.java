@@ -24,7 +24,7 @@ public class Abarrote{
 		Scanner scn = new Scanner (System.in);
 		inv.restarProductos();
 		precio=inv.getPrecio();
-		System.out.print("CANTIDAD: ");cantidad=scn.nextInt();
+		System.out.print("CANTIDAD: ");cantidad=inv.getCantidad();
 		total=precio*cantidad;
 	}
 

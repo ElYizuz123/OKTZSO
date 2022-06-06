@@ -63,6 +63,7 @@ public class Ticket extends DatosTicket{
 			System.out.print("\nNUMERO DE TARJETA: ");
 			numeroTarjeta=ent.nextLine();
 		}
+		super.capturar();
 	}
 
 	public String getNumeroTarjeta(){

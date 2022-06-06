@@ -25,11 +25,16 @@ public class Oxxo{
 		cargarClientes();
 		cargarTrabajadores();
 	}
-	public void capturarCompras(){
+	public void capturarCompra(){
 		compras[cCompras]=new FacturaCompra();
 		compras[cCompras].capturar(inv);
 		compras[cCompras].mostrar();
 		cCompras++;
+	}
+	public void mostrarCompras(){
+		for(int i=0; i<cCompras; i++){
+			compras[i].mostrar();
+		}
 	}
 	public void capturarVenta(){
 		ventas[cVentas]=new Ticket();

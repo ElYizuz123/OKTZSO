@@ -34,6 +34,7 @@ public class DetalleC implements Interface{
 		else
 			inv.sumarProductos();
 		costo=inv.getCosto();
+		cantidad=inv.getCantidad();
 		total=costo*cantidad;
 	}
 

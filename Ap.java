@@ -24,6 +24,8 @@ public class Ap{
 				case 34: okzo.editarCliente(); break;
 				case 42: okzo.capturarVenta(); break;
 				case 41: okzo.mostrarVentas(); break;
+				case 51: okzo.mostrarCompras(); break;
+				case 52: okzo.capturarCompra(); break;
 			}
 		}while(dato2!=0);
 		okzo.guardarProveedor();
@@ -37,7 +39,7 @@ public class Ap{
 		System.out.print("Opcion: ");dato=leer.nextInt();
 		switch(dato){
 			case 1:
-				System.out.println("\n1.-TRABAJADORES       2.-PROVEEDORES      3.-SALIR");
+				System.out.println("\n1.-TRABAJADORES       2.-PROVEEDORES       3.-COMPRAS          4.-SALIR");
 				System.out.print("Opcion: ");dato=leer.nextInt();
 				if(dato==1){
 					System.out.println("\n1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR");
@@ -50,11 +52,13 @@ public class Ap{
 					return dato;
 				}
 				else if(dato==3){
-					return 0;
+					System.out.println("1.-MOSTRAR      2.-CAPTURAR");
+					System.out.println("Opcion: ");
+					return dato;
 				}
 			break;
 			case 2:
-			System.out.println("\n1.-MOSTRAR PROVEEDORES     2.-CLIENTES      3.-VENTA       4.-SALIR");
+			System.out.println("\n1.-MOSTRAR PROVEEDORES     2.-CLIENTES      3.-VENTA       4.-COMPRA      5.-SALIR");
 			System.out.print("Opcion: "); dato=leer.nextInt();
 			if(dato==1){
 				return dato+20;
@@ -68,6 +72,11 @@ public class Ap{
 				System.out.println("\n1.-MOSTRAR      2.-CAPTURAR");
 				System.out.print("Opcion: ");
 				return 40+leer.nextInt();
+			}
+			else if(dato==4){
+				System.out.println("1.-MOSTRAR      2.-CAPTURAR");
+				System.out.println("Opcion: ");dato=leer.nextInt()+50;
+				return dato;
 			}
 			break;
 			case 3:

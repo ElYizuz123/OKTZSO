@@ -11,8 +11,11 @@ public class Inventario{
 
 	}
 	public void capturarNuevoProducto(){
+		Scanner ent=new Scanner(System.in);
 		productos[cProductos]=new Mercancia();
 		productos[cProductos].capturar();
+		System.out.println("Inserte la cantidad de productos: ");cantidad=ent.nextInt();
+		productos[cProductos].setCantidad(cantidad);
 		costo=productos[cProductos].getCosto();
 		cProductos++;
 	}
@@ -69,5 +72,8 @@ public class Inventario{
 	}
 	public double getCosto(){
 		return costo;
+	}
+	public int getCantidad(){
+		return cantidad;
 	}
 }
