@@ -313,10 +313,9 @@ public class Oxxo{
 				System.out.println("\n-------PROVEEDOR "+cont+"-------");
 				p.mostrar();
 				System.out.println("---------------------------------");
-				megaCadena="";
 			}
 		}
-
+		megaCadena="";
 	}
 	public void mostrarTrabajadores(String cadena){
 		int cont=0;
@@ -335,6 +334,7 @@ public class Oxxo{
 				megaCadena="";
 			}
 		}
+		megaCadena="";
 
 	}
 	public void mostrarVentas(String cadena){
@@ -349,9 +349,26 @@ public class Oxxo{
 				System.out.println("\n-------VENTA "+cont+"-------");
 				p.mostrar();
 				System.out.println("---------------------------------");
-				megaCadena="";
 			}
 		}
+		megaCadena="";
+
+	}
+	public void mostrarCompras(String cadena){
+		int cont=0;
+		String megaCadena="";
+		FacturaCompra p=new FacturaCompra();
+		for(int i=0; i<cVentas; i++){
+			cont++;
+			p=compras[i];
+			megaCadena=p.getRfcProveedor()+p.getFecha()+p.getHora()+p.getTotal()+p.getSubTotal()+p.getIvaTotal()+p.getFolio();
+			if(megaCadena.contains(cadena)){
+				System.out.println("\n-------VENTA "+cont+"-------");
+				p.mostrar();
+				System.out.println("---------------------------------");
+			}
+		}
+		megaCadena="";
 
 	}
 

@@ -27,6 +27,7 @@ public class Ap{
 				case 43: System.out.print("\nPALABRA A BUSCAR: ");cadena=leer.nextLine();okzo.mostrarVentas(cadena);break;
 				case 51: okzo.mostrarCompras(); break;
 				case 52: okzo.capturarCompra(); break;
+				case 53: System.out.print("\nPALABRA A BUSCAR: ");cadena=leer.nextLine();okzo.mostrarCompras(cadena);break;
 				case 60: okzo.mostrarInventario(); break;
 			}
 		}while(dato2!=0);
@@ -59,7 +60,7 @@ public class Ap{
 				else if(dato==3){
 					System.out.println("1.-MOSTRAR      2.-CAPTURAR      3.-BUSCAR");
 					System.out.println("Opcion: ");
-					return 40+leer.nextInt();
+					return 50+leer.nextInt();
 				}
 				else if(dato==4){
 					return 60;
@@ -77,12 +78,12 @@ public class Ap{
 					return dato+30;
 			}
 			else if(dato==3){
-				System.out.println("\n1.-MOSTRAR      2.-CAPTURAR     3.-BUSCAR ");
+				System.out.println("\n1.-MOSTRAR      2.-CAPTURAR     3.-BUSCAR     4.-SALIR");
 				System.out.print("Opcion: ");
 				return 40+leer.nextInt();
 			}
 			else if(dato==4){
-				System.out.println("1.-MOSTRAR      2.-CAPTURAR");
+				System.out.println("1.-MOSTRAR      2.-CAPTURAR       3.-BUSCAR      4.-SALIR");
 				System.out.println("Opcion: ");dato=leer.nextInt()+50;
 				return dato;
 			}
