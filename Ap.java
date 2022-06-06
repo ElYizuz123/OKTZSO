@@ -26,11 +26,13 @@ public class Ap{
 				case 41: okzo.mostrarVentas(); break;
 				case 51: okzo.mostrarCompras(); break;
 				case 52: okzo.capturarCompra(); break;
+				case 60: okzo.mostrarInventario(); break;
 			}
 		}while(dato2!=0);
 		okzo.guardarProveedor();
 		okzo.guardarCliente();
 		okzo.guardarTrabajador();
+		okzo.guardarInventario();
 	}
 	public static int mostrarMenu(){
 		Scanner leer=new Scanner(System.in);
@@ -39,7 +41,7 @@ public class Ap{
 		System.out.print("Opcion: ");dato=leer.nextInt();
 		switch(dato){
 			case 1:
-				System.out.println("\n1.-TRABAJADORES       2.-PROVEEDORES       3.-COMPRAS          4.-SALIR");
+				System.out.println("\n1.-TRABAJADORES       2.-PROVEEDORES       3.-COMPRAS          4.-MOSTRAR INVENTARIO     5.-SALIR");
 				System.out.print("Opcion: ");dato=leer.nextInt();
 				if(dato==1){
 					System.out.println("\n1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR");
@@ -55,6 +57,9 @@ public class Ap{
 					System.out.println("1.-MOSTRAR      2.-CAPTURAR");
 					System.out.println("Opcion: ");
 					return dato;
+				}
+				else if(dato==4){
+					return 60;
 				}
 			break;
 			case 2:

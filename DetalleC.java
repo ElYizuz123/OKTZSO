@@ -4,6 +4,7 @@ public class DetalleC implements Interface{
 	private int cantidad;
 	private double costo;
 	private double total;
+	private String nombreP;
 
 
 	public DetalleC(String idProducto, int cantidad, double costo){
@@ -18,7 +19,9 @@ public class DetalleC implements Interface{
 		return "DetalleC";
 	}
 
-	public void mostrar(){}
+	public void mostrar(){
+		System.out.println(nombreP+"          "+cantidad+"       "+total);
+	}
 
 	public void capturar(){
 		
@@ -28,7 +31,7 @@ public class DetalleC implements Interface{
 		int opcion;
 		System.out.println("----------CAPTURA LA COMPRA----------");
 		System.out.print("1.- AGREGAR PRODUCTO NUEVO      2.-AGREGAR PRODUCTO EXISTENTE");
-		opcion=leer.nextInt();
+		opcion=leer.nextInt();leer.nextLine();
 		if(opcion==1)
 			inv.capturarNuevoProducto();
 		else
@@ -36,6 +39,7 @@ public class DetalleC implements Interface{
 		costo=inv.getCosto();
 		cantidad=inv.getCantidad();
 		total=costo*cantidad;
+		nombreP=inv.getNombreProducto();
 	}
 
 	public String getIdProducto(){

@@ -24,9 +24,16 @@ public class Oxxo{
 		cargarProveedores();
 		cargarClientes();
 		cargarTrabajadores();
+		cargarInventario();
+	}
+	public void mostrarInventario(){
+		inv.mostrar();
 	}
 	public void guardarInventario(){
 		inv.guardar();
+	}
+	public void cargarInventario(){
+		inv.cargar();
 	}
 	public void capturarCompra(){
 		compras[cCompras]=new FacturaCompra();

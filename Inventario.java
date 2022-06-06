@@ -4,9 +4,10 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.Scanner;
 
+
 public class Inventario{
 	private Mercancia productos[]=new Mercancia[1000];
-	private int cProductos;
+	private int cProductos=0;
 	private int cantidad;
 	private double precio;
 	private double costo;
@@ -14,19 +15,38 @@ public class Inventario{
 	public Inventario (){
 
 	}
+	public void mostrar(){
+		for(int i=0; i<cProductos; i++){
+			productos[i].mostrar();
+		}
+	}
 	public void guardar(){
 		FileOutputStream salidaP=null;
 		ObjectOutputStream oP=null;
 		try{
 			salidaP= new FileOutputStream("Inventario.dat");
 			oP= new ObjectOutputStream(salidaP);
-			for(int i=0; i<cPersonas; i++){
-				if(personas[i].queSoy().equals("Proveedor"))
-					oP.writeObject(personas[i]);
-			}
+			for(int i=0; i<cProductos; i++)
+				oP.writeObject(productos[i]);
 		}
 		catch(Exception e){
 			System.err.println(e);
+		}
+	}
+	public void cargar(){
+		FileInputStream entradaP=null;
+		ObjectInputStream oP=null;
+		try{
+			entradaP=new FileInputStream ("Inventario.dat");
+			oP=new ObjectInputStream(entradaP);
+			productos[cProductos]=(Mercancia)oP.readObject();
+			while(productos[cProductos]!=null){
+				cProductos++;
+				productos[cProductos]=(Mercancia)oP.readObject();
+			}
+		}
+		catch(Exception e){
+
 		}
 	}
 	public void capturarNuevoProducto(){
@@ -36,6 +56,7 @@ public class Inventario{
 		System.out.println("Inserte la cantidad de productos: ");cantidad=ent.nextInt();
 		productos[cProductos].setCantidad(cantidad);
 		costo=productos[cProductos].getCosto();
+		nombreProducto=productos[cProductos].getNombreProducto();
 		cProductos++;
 	}
 	public void sumarProductos(){
@@ -48,6 +69,7 @@ public class Inventario{
 				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
 				productos[i].setCantidad(productos[i].getCantidad()+cantidad);
 				costo=productos[i].getCosto();
+				nombreProducto=productos[i].getNombreProducto();
 				comprobador=true;
 				break;
 			}

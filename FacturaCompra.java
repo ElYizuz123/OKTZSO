@@ -12,10 +12,10 @@ public class FacturaCompra extends DatosTicket{
 	public FacturaCompra(){
 
 	}
-	
+	@Override
 	public void mostrar(){
+		System.out.println("\n----------------COMPRA-----------------");
 		super.mostrarFecha();
-		System.out.println("\n----------------PRODUCTOS-----------------");
 		for(int i=0; i<cDetallesc; i++){
 				detallesc[i].mostrar();
 		}

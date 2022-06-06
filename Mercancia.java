@@ -1,5 +1,6 @@
+import java.io.Serializable;
 import java.util.Scanner;
-public class Mercancia{
+public class Mercancia implements Serializable{
 	private String idProducto;
 	private int cantidad;
 	private double costo;
@@ -18,7 +19,7 @@ public class Mercancia{
 	}
 
 	public void mostrar(){
-		System.out.println("Productos:");
+		System.out.println("---------- PRODUCTO --------------");
 		System.out.println("ID del producto: " +idProducto);
 		System.out.println("Nombre del producto: "+nombreProducto);
 		System.out.println("Cantidad: "+cantidad);
