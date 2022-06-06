@@ -356,19 +356,20 @@ public class Oxxo{
 	}
 	public void mostrarCompras(String cadena){
 		int cont=0;
-		String megaCadena="";
+		String megaCadena;
 		FacturaCompra p=new FacturaCompra();
-		for(int i=0; i<cVentas; i++){
+		for(int i=0; i<cCompras; i++){
 			cont++;
 			p=compras[i];
 			megaCadena=p.getRfcProveedor()+p.getFecha()+p.getHora()+p.getTotal()+p.getSubTotal()+p.getIvaTotal()+p.getFolio();
 			if(megaCadena.contains(cadena)){
 				System.out.println("\n-------VENTA "+cont+"-------");
-				p.mostrar();
+				compras[i].mostrar();
 				System.out.println("---------------------------------");
 			}
+			megaCadena="";
 		}
-		megaCadena="";
+		
 
 	}
 
