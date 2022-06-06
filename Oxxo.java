@@ -346,7 +346,8 @@ public class Oxxo{
 			cont++;
 			p=ventas[i];
 			megaCadena=p.getRfcTrabajador()+p.getFecha()+p.getHora()+p.getTotal()+p.getSubTotal()+p.getIvaTotal()+p.getFolio();
-			if(megaCadena.contains(cadena)){
+			p.buscarDetalles(cadena);
+			if(megaCadena.contains(cadena)||p.getBuscador()==true){
 				System.out.println("\n-------VENTA "+cont+"-------");
 				p.mostrar();
 				System.out.println("---------------------------------");
@@ -364,7 +365,8 @@ public class Oxxo{
 			cont++;
 			p=compras[i];
 			megaCadena=p.getRfcProveedor()+p.getFecha()+p.getHora()+p.getTotal()+p.getSubTotal()+p.getIvaTotal()+p.getFolio();
-			if(megaCadena.contains(cadena)){
+			p.buscarDetalles(cadena);
+			if(megaCadena.contains(cadena)||p.getBuscador()==true){
 				System.out.println("\n-------VENTA "+cont+"-------");
 				compras[i].mostrar();
 				System.out.println("---------------------------------");

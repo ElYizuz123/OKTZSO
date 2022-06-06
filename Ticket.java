@@ -6,6 +6,7 @@ public class Ticket extends DatosTicket{
 	public double ventaProductos;
 	private int tipoPago;
 	private String numeroTarjeta;
+	private boolean buscador=false;
 
 	public Ticket(String rfcTrabajador, String fecha, String hora, double total, double subTotal, double ivaTotal, int folio){
 		super(fecha, hora, total, subTotal, ivaTotal, folio);
@@ -14,6 +15,21 @@ public class Ticket extends DatosTicket{
 
 	public Ticket(){
 
+	}
+	public void buscarDetalles(String cadena){
+		String megaCadena="";
+		Detalle p=new Detalle();
+		for(int i=0; i<cDetalles; i++){
+			p=detalles[i];
+			megaCadena=p.getTipoServicio()+p.getIdProducto()+p.getPrecio()+p.getCantidadP()+p.getCuentaReceptora()+p.getTelefono()+p.getTipoServicio2()+p.getServicioPagar()+p.getDinero()+p.getTotal()+p.getNombreProducto();
+			if(megaCadena.contains(cadena)){
+				buscador=true;
+				break;
+			}
+			megaCadena="";
+			buscador=false;
+		}
+		
 	}
 	public void mostrar(){
 		System.out.println("\n----------------TICKET-----------------");
@@ -86,5 +102,8 @@ public class Ticket extends DatosTicket{
 	}
 	public void setRfcTrabajador(String rfcTrabajador){
 		this.rfcTrabajador=rfcTrabajador;
+	}
+	public Boolean getBuscador(){
+		return buscador;
 	}
 }

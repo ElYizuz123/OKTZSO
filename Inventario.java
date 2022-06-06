@@ -12,6 +12,7 @@ public class Inventario{
 	private double precio;
 	private double costo;
 	private String nombreProducto;
+	private String idProducto;
 	public Inventario (){
 
 	}
@@ -57,6 +58,7 @@ public class Inventario{
 		productos[cProductos].setCantidad(cantidad);
 		costo=productos[cProductos].getCosto();
 		nombreProducto=productos[cProductos].getNombreProducto();
+		idProducto=productos[cProductos].getIdProducto();
 		cProductos++;
 	}
 	public void sumarProductos(){
@@ -70,6 +72,7 @@ public class Inventario{
 				productos[i].setCantidad(productos[i].getCantidad()+cantidad);
 				costo=productos[i].getCosto();
 				nombreProducto=productos[i].getNombreProducto();
+				idProducto=productos[i].getIdProducto();
 				comprobador=true;
 				break;
 			}
@@ -98,6 +101,7 @@ public class Inventario{
 				productos[i].setCantidad(productos[i].getCantidad()-cantidad);
 				precio=productos[i].getPrecio();
 				nombreProducto=productos[i].getNombreProducto();
+				idProducto=productos[i].getIdProducto();
 				comprobador =true;
 				break;
 			}
@@ -108,6 +112,9 @@ public class Inventario{
 			System.out.println("El producto capturado no existe en nuestra lista vuelva a intentar");
 			restarProductos();
 		}
+	}
+	public String getIdProducto(){
+		return idProducto;
 	}
 	public double getPrecio(){
 		return precio;

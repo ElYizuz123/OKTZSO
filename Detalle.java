@@ -12,6 +12,7 @@ public class Detalle implements Interface, Serializable{
 	private String servicioPagar;
 	private double dinero;
 	private double total;
+	private String nombreProducto;
 
 	Abarrote ab=new Abarrote();
   Servicio ser=new Servicio();
@@ -48,6 +49,7 @@ public class Detalle implements Interface, Serializable{
 		if(tipoServicio==1){
 			ab.capturar(inv);
 			idProducto=ab.getIdProductoComprado();
+			nombreProducto=getNombreProducto();
 			precio=ab.getPrecio();
 			cantidadP=ab.getCantidad();
 			total=ab.getTotal();
@@ -91,6 +93,9 @@ public class Detalle implements Interface, Serializable{
 
 	}
 
+	public String getNombreProducto(){
+		return nombreProducto;
+	}
 	public int getCantidadP(){
         return cantidadP;
   }

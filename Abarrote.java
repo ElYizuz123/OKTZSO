@@ -5,6 +5,7 @@ public class Abarrote implements Serializable{
 	private double precio;
 	private int cantidad;
 	private double total;
+	private String idProductoComprado;
 
 	public Abarrote (String nombreProducto, double precio, int tipoPago){
 		this.nombreProducto=nombreProducto;
@@ -28,10 +29,13 @@ public class Abarrote implements Serializable{
 		cantidad=inv.getCantidad();
 		total=precio*cantidad;
 		nombreProducto=inv.getNombreProducto();
+		idProductoComprado=inv.getIdProducto();
 	}
 
 
-
+	public String getNombreProducto(){
+		return nombreProducto;
+	}
 	public int getCantidad(){
         return cantidad;
   }
@@ -42,7 +46,7 @@ public class Abarrote implements Serializable{
 		this.nombreProducto=nombreProducto;
 	}
 	public String getIdProductoComprado(){
-		return nombreProducto;
+		return idProductoComprado;
 	}
 
 	public void setPrecio(double precio){

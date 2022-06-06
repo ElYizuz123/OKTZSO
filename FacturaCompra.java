@@ -4,12 +4,26 @@ public class FacturaCompra extends DatosTicket{
 	private String rfcProveedor;
 	public DetalleC detallesc[]=new DetalleC[20];
 	public int cDetallesc=0;
+	private boolean buscador=false;
 
 	public FacturaCompra(String rfcProveedor, String fecha, String hora, double total, double subTotal, double ivaTotal, int folio){
 		super(fecha, hora, total, subTotal, ivaTotal, folio);
 		this.rfcProveedor=rfcProveedor;
 	}
-
+	public void buscarDetalles(String cadena){
+		String megaCadena="";
+		DetalleC p=new DetalleC();
+		for(int i=0; i<cDetallesc; i++){
+			p=detallesc[i];
+			megaCadena=p.getIdProducto()+p.getCosto()+p.getCantidad()+p.getTotal()+p.getNombreP();
+			if(megaCadena.contains(cadena)){
+				buscador=true;
+				break;
+			}
+			megaCadena="";
+			buscador=false;
+		}
+	}
 	public FacturaCompra(){
 
 	}
@@ -49,5 +63,8 @@ public class FacturaCompra extends DatosTicket{
 	}
 	public void setRfcProveedor(String rfcProveedor){
 		this.rfcProveedor=rfcProveedor;
+	}
+	public boolean getBuscador(){
+		return buscador;
 	}
 }

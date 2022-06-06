@@ -41,6 +41,7 @@ public class DetalleC implements Interface, Serializable{
 		cantidad=inv.getCantidad();
 		total=costo*cantidad;
 		nombreP=inv.getNombreProducto();
+		idProducto=inv.getIdProducto();
 	}
 
 	public String getIdProducto(){
@@ -66,5 +67,8 @@ public class DetalleC implements Interface, Serializable{
 	}
 	public void setTotal(int total){
 		this.total=total;
+	}
+	public String getNombreP(){
+		return nombreP;
 	}
 }
