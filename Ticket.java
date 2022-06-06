@@ -66,7 +66,6 @@ public class Ticket extends DatosTicket{
 		}
 		super.capturar(cCompras);
 	}
-
 	public String getNumeroTarjeta(){
 		return numeroTarjeta;
 	}

@@ -314,8 +314,9 @@ public class Oxxo{
 				p.mostrar();
 				System.out.println("---------------------------------");
 			}
+			megaCadena="";
 		}
-		megaCadena="";
+		
 	}
 	public void mostrarTrabajadores(String cadena){
 		int cont=0;
@@ -331,10 +332,10 @@ public class Oxxo{
 				System.out.println("\n-------TRABAJADOR "+cont+"-------");
 				p.mostrar();
 				System.out.println("---------------------------------");
-				megaCadena="";
+				
 			}
+			megaCadena="";
 		}
-		megaCadena="";
 
 	}
 	public void mostrarVentas(String cadena){
@@ -350,8 +351,9 @@ public class Oxxo{
 				p.mostrar();
 				System.out.println("---------------------------------");
 			}
+			megaCadena="";
 		}
-		megaCadena="";
+		
 
 	}
 	public void mostrarCompras(String cadena){
