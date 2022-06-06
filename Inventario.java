@@ -7,6 +7,7 @@ public class Inventario{
 	private int cantidad;
 	private double precio;
 	private double costo;
+	private String nombreProducto;
 	public Inventario (){
 
 	}
@@ -25,7 +26,7 @@ public class Inventario{
 		boolean comprobador=false;
 		System.out.print("INSERTE EL ID DEL PRODUCTO: ");buscarId=ent.nextLine();
 		for(int i=0; i<cProductos; i++){
-			if(productos[i].getIdProducto().contains(buscarId)){
+			if(productos[i].getIdProducto().equals(buscarId)){
 				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
 				productos[i].setCantidad(productos[i].getCantidad()+cantidad);
 				costo=productos[i].getCosto();
@@ -52,10 +53,11 @@ public class Inventario{
 		boolean comprobador=false;
 		System.out.print("INSERTE EL ID DEL PRODUCTO: ");buscarId=ent.nextLine();
 		for(int i=0; i<cProductos; i++){
-			if(productos[i].getIdProducto().contains(buscarId)){
+			if(productos[i].getIdProducto().equals(buscarId)){
 				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
 				productos[i].setCantidad(productos[i].getCantidad()-cantidad);
 				precio=productos[i].getPrecio();
+				nombreProducto=productos[i].getNombreProducto();
 				comprobador =true;
 				break;
 			}
@@ -75,5 +77,8 @@ public class Inventario{
 	}
 	public int getCantidad(){
 		return cantidad;
+	}
+	public String getNombreProducto(){
+		return nombreProducto;
 	}
 }

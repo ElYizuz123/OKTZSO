@@ -1,12 +1,12 @@
 import java.util.Scanner;
 public class Abarrote{
-	private String idProductoComprado;
+	private String nombreProducto;
 	private double precio;
 	private int cantidad;
 	private double total;
 
-	public Abarrote (String idProductoComprado, double precio, int tipoPago){
-		this.idProductoComprado=idProductoComprado;
+	public Abarrote (String nombreProducto, double precio, int tipoPago){
+		this.nombreProducto=nombreProducto;
 		this.precio=precio;
 		this.cantidad=cantidad;
 	}
@@ -18,14 +18,15 @@ public class Abarrote{
 		return "Abarrote";
 	}
 	public void mostrar(){
-		System.out.println(idProductoComprado+"           "+cantidad+"      "+total);
+		System.out.println(nombreProducto+"           "+cantidad+"      "+total);
 	 }
 	public void capturar(Inventario inv){
 		Scanner scn = new Scanner (System.in);
 		inv.restarProductos();
 		precio=inv.getPrecio();
-		System.out.print("CANTIDAD: ");cantidad=inv.getCantidad();
+		cantidad=inv.getCantidad();
 		total=precio*cantidad;
+		nombreProducto=inv.getNombreProducto();
 	}
 
 
@@ -36,11 +37,11 @@ public class Abarrote{
 	public void setCantidad(int cantidad){
         this.cantidad=cantidad;
   }
-	public void setIdProductoComprado(String idProductoComprado){
-		this.idProductoComprado=idProductoComprado;
+	public void setNombreProducto(String nombreProducto){
+		this.nombreProducto=nombreProducto;
 	}
 	public String getIdProductoComprado(){
-		return idProductoComprado;
+		return nombreProducto;
 	}
 
 	public void setPrecio(double precio){

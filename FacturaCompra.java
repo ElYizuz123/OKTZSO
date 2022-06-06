@@ -31,10 +31,13 @@ public class FacturaCompra extends DatosTicket{
 			detallesc[cDetallesc].capturar(inv);
 			super.setSubTotal(detallesc[cDetallesc].getTotal());
 			super.sumarSubTotales();
+			super.setSumarIva(detallesc[cDetallesc].getTotal());
+			super.sumarIvas();
 			cDetallesc++;
 			System.out.print("Desea Realizar Otra Compra	1.- Si || 2.-No: ");
 			op=ent.nextInt();
 		}while(op!=2);
+		super.capturar();
 	}
 
 	
