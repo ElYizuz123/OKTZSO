@@ -1,5 +1,6 @@
 import java.util.Scanner;
-public class Abarrote{
+import java.io.Serializable;
+public class Abarrote implements Serializable{
 	private String nombreProducto;
 	private double precio;
 	private int cantidad;

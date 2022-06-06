@@ -30,6 +30,36 @@ public class Oxxo{
 		cargarTrabajadores();
 		cargarInventario();
 		cargarCompras();
+		cargarVentas();
+	}
+	public void guardarVentas(){
+		FileOutputStream salidaP=null;
+		ObjectOutputStream oP=null;
+		try{
+			salidaP= new FileOutputStream("Ventas.dat");
+			oP= new ObjectOutputStream(salidaP);
+			for(int i=0; i<cVentas; i++)
+				oP.writeObject(ventas[i]);
+		}
+		catch(Exception e){
+			System.err.println(e);
+		}
+	}
+	private void cargarVentas(){
+		FileInputStream entradaP=null;
+		ObjectInputStream oP=null;
+		try{
+			entradaP=new FileInputStream ("Ventas.dat");
+			oP=new ObjectInputStream(entradaP);
+			ventas[cVentas]=(Ticket)oP.readObject();
+			while(ventas[cVentas]!=null){
+				cVentas++;
+				ventas[cVentas]=(Ticket)oP.readObject();
+			}
+		}
+		catch(Exception e){
+
+		}
 	}
 	public void guardarCompras(){
 		FileOutputStream salidaP=null;

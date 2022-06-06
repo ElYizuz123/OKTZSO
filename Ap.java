@@ -34,6 +34,7 @@ public class Ap{
 		okzo.guardarTrabajador();
 		okzo.guardarInventario();
 		okzo.guardarCompras();
+		okzo.guardarVentas();
 	}
 	public static int mostrarMenu(){
 		Scanner leer=new Scanner(System.in);

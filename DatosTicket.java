@@ -25,10 +25,6 @@ public abstract class DatosTicket implements Serializable{
 
 	}
 	protected void mostrarFecha(){
-		Oxxo gHora = new Oxxo();
-		gHora.generadorHora();
-		fecha=gHora.fecha;
-		hora=gHora.hora;
 		System.out.println(fecha+"   		 "+hora);
 	}
 	protected void mostrar(){
@@ -38,8 +34,12 @@ public abstract class DatosTicket implements Serializable{
 	}
 	protected void capturar(int nFolio){
 		ivaTotal=ivaTotal*0.16;
-		total=subTotal+ivaTotal;
+		total=total+ivaTotal;
 		folio=nFolio;
+		Oxxo gHora = new Oxxo();
+		gHora.generadorHora();
+		fecha=gHora.fecha;
+		hora=gHora.hora;
 	}
 	protected void sumarIvas(){
 		ivaTotal+=sumarIva;

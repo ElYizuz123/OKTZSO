@@ -17,6 +17,7 @@ public class FacturaCompra extends DatosTicket{
 	public void mostrar(){
 		System.out.println("\n----------------COMPRA-----------------");
 		super.mostrarFecha();
+		System.out.println("RFC del proveedor: "+rfcProveedor);
 		for(int i=0; i<cDetallesc; i++){
 				detallesc[i].mostrar();
 		}

@@ -1,5 +1,6 @@
 import java.util.Scanner;
-public class Servicio{
+import java.io.Serializable;
+public class Servicio implements Serializable{
 	private String cuentaReceptora;
 	private String telefono;
 	private int tipoServicio;
@@ -22,6 +23,9 @@ public class Servicio{
 	}
 
 	public void mostrar(){
+		switch(tipoServicio){
+			
+		}
 		System.out.println(nombreServicio+"              "+total);
 	}
 	public void capturar(){
