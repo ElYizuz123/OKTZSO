@@ -1,4 +1,7 @@
-
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.Scanner;
 
 public class Inventario{
@@ -10,6 +13,21 @@ public class Inventario{
 	private String nombreProducto;
 	public Inventario (){
 
+	}
+	public void guardar(){
+		FileOutputStream salidaP=null;
+		ObjectOutputStream oP=null;
+		try{
+			salidaP= new FileOutputStream("Inventario.dat");
+			oP= new ObjectOutputStream(salidaP);
+			for(int i=0; i<cPersonas; i++){
+				if(personas[i].queSoy().equals("Proveedor"))
+					oP.writeObject(personas[i]);
+			}
+		}
+		catch(Exception e){
+			System.err.println(e);
+		}
 	}
 	public void capturarNuevoProducto(){
 		Scanner ent=new Scanner(System.in);

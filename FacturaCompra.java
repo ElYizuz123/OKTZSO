@@ -14,6 +14,7 @@ public class FacturaCompra extends DatosTicket{
 	}
 	
 	public void mostrar(){
+		super.mostrarFecha();
 		System.out.println("\n----------------PRODUCTOS-----------------");
 		for(int i=0; i<cDetallesc; i++){
 				detallesc[i].mostrar();
@@ -22,7 +23,7 @@ public class FacturaCompra extends DatosTicket{
 		System.out.println("---------------------------------------");
 	}
 	
-	public void capturar(Inventario inv){
+	public void capturar(Inventario inv, int cVentas){
 		Scanner ent=new Scanner(System.in);
 		System.out.print("\nRFC DEL PROVEEDOR: ");rfcProveedor=ent.nextLine();
 		int op=5;
@@ -37,7 +38,7 @@ public class FacturaCompra extends DatosTicket{
 			System.out.print("Desea Realizar Otra Compra	1.- Si || 2.-No: ");
 			op=ent.nextInt();
 		}while(op!=2);
-		super.capturar();
+		super.capturar(cVentas);
 	}
 
 	

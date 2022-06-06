@@ -25,9 +25,12 @@ public class Oxxo{
 		cargarClientes();
 		cargarTrabajadores();
 	}
+	public void guardarInventario(){
+		inv.guardar();
+	}
 	public void capturarCompra(){
 		compras[cCompras]=new FacturaCompra();
-		compras[cCompras].capturar(inv);
+		compras[cCompras].capturar(inv, cCompras);
 		compras[cCompras].mostrar();
 		cCompras++;
 	}
@@ -38,7 +41,7 @@ public class Oxxo{
 	}
 	public void capturarVenta(){
 		ventas[cVentas]=new Ticket();
-		ventas[cVentas].capturar(inv);
+		ventas[cVentas].capturar(inv, cVentas);
 		ventas[cVentas].mostrar();
 		cVentas++;
 	}

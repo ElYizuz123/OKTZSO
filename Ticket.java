@@ -37,7 +37,7 @@ public class Ticket extends DatosTicket{
 		}
 		System.out.println("---------------------------------------");
 	}
-	public void capturar(Inventario inv){
+	public void capturar(Inventario inv, int cCompras){
 		Scanner ent=new Scanner(System.in);
 		Detalle det=new Detalle();
 		System.out.print("\nRFC DEL TRABAJADOR: ");rfcTrabajador=ent.nextLine();
@@ -63,7 +63,7 @@ public class Ticket extends DatosTicket{
 			System.out.print("\nNUMERO DE TARJETA: ");
 			numeroTarjeta=ent.nextLine();
 		}
-		super.capturar();
+		super.capturar(cCompras);
 	}
 
 	public String getNumeroTarjeta(){
