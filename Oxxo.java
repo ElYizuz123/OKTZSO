@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
@@ -14,6 +16,8 @@ public class Oxxo{
 	private FacturaCompra compras[]=new FacturaCompra[10000];
 	private int cCompras=0;
 	private Inventario inv = new Inventario();
+	public String fecha;
+	public String hora;
 	public Oxxo(){
 	}
 	
@@ -25,6 +29,43 @@ public class Oxxo{
 		cargarClientes();
 		cargarTrabajadores();
 		cargarInventario();
+		cargarCompras();
+	}
+	public void guardarCompras(){
+		FileOutputStream salidaP=null;
+		ObjectOutputStream oP=null;
+		try{
+			salidaP= new FileOutputStream("Compras.dat");
+			oP= new ObjectOutputStream(salidaP);
+			for(int i=0; i<cCompras; i++)
+				oP.writeObject(compras[i]);
+		}
+		catch(Exception e){
+			System.err.println(e);
+		}
+	}
+	private void cargarCompras(){
+		FileInputStream entradaP=null;
+		ObjectInputStream oP=null;
+		try{
+			entradaP=new FileInputStream ("Compras.dat");
+			oP=new ObjectInputStream(entradaP);
+			compras[cCompras]=(FacturaCompra)oP.readObject();
+			while(compras[cCompras]!=null){
+				cCompras++;
+				compras[cCompras]=(FacturaCompra)oP.readObject();
+			}
+		}
+		catch(Exception e){
+
+		}
+	}
+	public void generadorHora(){
+		DateTimeFormatter forFecha = DateTimeFormatter.ofPattern("dd/MM/yyy");
+		DateTimeFormatter forHora = DateTimeFormatter.ofPattern("HH:mm");
+		LocalDateTime tiempo = LocalDateTime.now();
+		fecha = tiempo.format(forFecha);
+		hora = tiempo.format(forHora);
 	}
 	public void mostrarInventario(){
 		inv.mostrar();

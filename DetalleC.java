@@ -1,5 +1,6 @@
+import java.io.Serializable;
 import java.util.Scanner;
-public class DetalleC implements Interface{
+public class DetalleC implements Interface, Serializable{
 	private String idProducto;
 	private int cantidad;
 	private double costo;

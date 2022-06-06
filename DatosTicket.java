@@ -1,7 +1,6 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
-public abstract class DatosTicket{
+import java.io.Serializable;
+public abstract class DatosTicket implements Serializable{
 	protected String fecha;
 	protected String hora;
 	protected double total;
@@ -10,8 +9,7 @@ public abstract class DatosTicket{
 	protected int folio;
 	protected double sumarIva;
 
-	DateTimeFormatter forFecha = DateTimeFormatter.ofPattern("dd/MM/yyy");
-	DateTimeFormatter forHora = DateTimeFormatter.ofPattern("HH:mm");
+	
 
 	public DatosTicket(String fecha, String hora, double total, double subTotal, double ivaTotal, int folio){
 	this.fecha=fecha;
@@ -27,9 +25,10 @@ public abstract class DatosTicket{
 
 	}
 	protected void mostrarFecha(){
-		LocalDateTime tiempo = LocalDateTime.now();
-		fecha = tiempo.format(forFecha);
-		hora = tiempo.format(forHora);
+		Oxxo gHora = new Oxxo();
+		gHora.generadorHora();
+		fecha=gHora.fecha;
+		hora=gHora.hora;
 		System.out.println(fecha+"   		 "+hora);
 	}
 	protected void mostrar(){

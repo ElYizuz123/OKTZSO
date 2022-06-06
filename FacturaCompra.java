@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 public class FacturaCompra extends DatosTicket{
 	private String rfcProveedor;
