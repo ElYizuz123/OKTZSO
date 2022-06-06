@@ -33,6 +33,7 @@ public class Ticket extends DatosTicket{
 			break;
 
 			case 2: System.out.println("\nPAGO ELECTRONICO");
+			System.out.println("CON LA CUENTA: "+numeroTarjeta);
 			break;
 		}
 		System.out.println("---------------------------------------");

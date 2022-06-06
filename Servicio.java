@@ -24,9 +24,17 @@ public class Servicio implements Serializable{
 
 	public void mostrar(){
 		switch(tipoServicio){
+			case 1:
+				System.out.println(nombreServicio+"AL NUMERO: "+telefono+"DE $"+total);
+				break;
+			case 2:
+				System.out.println(nombreServicio+"             $"+total);
+				break;
+			case 3:
+				System.out.println(nombreServicio+"A LA CUENTA: "+cuentaReceptora+"DE $"+total);
 			
 		}
-		System.out.println(nombreServicio+"              "+total);
+		
 	}
 	public void capturar(){
 		Scanner leer=new Scanner(System.in);
@@ -54,7 +62,7 @@ public class Servicio implements Serializable{
 							total=leer.nextDouble();
 							break;
 
-			case 3: System.out.print("\nREFERENCIA: ");
+			case 3: System.out.print("\nCUENTA RECEPTORA: ");
 							cuentaReceptora=leer.nextLine();
 							System.out.print("MONTO: $");
 							total=leer.nextDouble();

@@ -19,7 +19,7 @@ public class Abarrote implements Serializable{
 		return "Abarrote";
 	}
 	public void mostrar(){
-		System.out.println(nombreProducto+"           "+cantidad+"      "+total);
+		System.out.println(nombreProducto+"           "+cantidad+"      $"+total);
 	 }
 	public void capturar(Inventario inv){
 		Scanner scn = new Scanner (System.in);
