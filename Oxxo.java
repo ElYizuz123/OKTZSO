@@ -337,6 +337,23 @@ public class Oxxo{
 		}
 
 	}
+	public void mostrarVentas(String cadena){
+		int cont=0;
+		String megaCadena="";
+		Ticket p=new Ticket();
+		for(int i=0; i<cVentas; i++){
+			cont++;
+			p=ventas[i];
+			megaCadena=p.getRfcTrabajador()+p.getFecha()+p.getHora()+p.getTotal()+p.getSubTotal()+p.getIvaTotal()+p.getFolio();
+			if(megaCadena.contains(cadena)){
+				System.out.println("\n-------VENTA "+cont+"-------");
+				p.mostrar();
+				System.out.println("---------------------------------");
+				megaCadena="";
+			}
+		}
+
+	}
 
 	public void capturarTrabajador(){
 		System.out.println("\n--------CAPTURA EL TRABAJADOR-------");

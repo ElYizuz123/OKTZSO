@@ -24,6 +24,7 @@ public class Ap{
 				case 34: okzo.editarCliente(); break;
 				case 42: okzo.capturarVenta(); break;
 				case 41: okzo.mostrarVentas(); break;
+				case 43: System.out.print("\nPALABRA A BUSCAR: ");cadena=leer.nextLine();okzo.mostrarVentas(cadena);break;
 				case 51: okzo.mostrarCompras(); break;
 				case 52: okzo.capturarCompra(); break;
 				case 60: okzo.mostrarInventario(); break;
@@ -56,9 +57,9 @@ public class Ap{
 					return dato;
 				}
 				else if(dato==3){
-					System.out.println("1.-MOSTRAR      2.-CAPTURAR");
+					System.out.println("1.-MOSTRAR      2.-CAPTURAR      3.-BUSCAR");
 					System.out.println("Opcion: ");
-					return dato;
+					return 40+leer.nextInt();
 				}
 				else if(dato==4){
 					return 60;
@@ -76,7 +77,7 @@ public class Ap{
 					return dato+30;
 			}
 			else if(dato==3){
-				System.out.println("\n1.-MOSTRAR      2.-CAPTURAR");
+				System.out.println("\n1.-MOSTRAR      2.-CAPTURAR     3.-BUSCAR ");
 				System.out.print("Opcion: ");
 				return 40+leer.nextInt();
 			}
