@@ -318,6 +318,25 @@ public class Oxxo{
 		}
 
 	}
+	public void mostrarTrabajadores(String cadena){
+		int cont=0;
+		String megaCadena="";
+		Trabajador p=new Trabajador();
+		for(int i=0; i<cPersonas; i++){
+			if(personas[i].queSoy().equals("Trabajador")){
+				cont++;
+				p=(Trabajador)personas[i];
+				megaCadena=p.getSexo()+p.getNombre()+p.getDireccion()+p.getCorreo()+p.getTelefono()+p.getRfc()+p.getHorario()+p.getCuenta();
+			}
+			if(megaCadena.contains(cadena)){
+				System.out.println("\n-------TRABAJADOR "+cont+"-------");
+				p.mostrar();
+				System.out.println("---------------------------------");
+				megaCadena="";
+			}
+		}
+
+	}
 
 	public void capturarTrabajador(){
 		System.out.println("\n--------CAPTURA EL TRABAJADOR-------");

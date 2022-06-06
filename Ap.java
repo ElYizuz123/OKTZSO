@@ -12,7 +12,7 @@ public class Ap{
 			switch(dato2){
 				case 1: okzo.mostrarTrabajadores(); break;
 				case 2: okzo.capturarTrabajador(); break;
-				case 3: break; //okzo.buscarTrabajador(); break;
+				case 3: System.out.print("\nPALABRA A BUSCAR: ");cadena=leer.nextLine();okzo.mostrarTrabajadores(cadena); break;
 				case 4: okzo.editarTrabajador(); break;
 				case 11: okzo.mostrarProveedores(); break;
 				case 12: okzo.capturarProveedor(); break;

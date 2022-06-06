@@ -7,7 +7,7 @@ public class Trabajador extends Persona{
 	
 	public Trabajador(){	
 	}
-	public Trabajador(String sexo, String horario, String cuenta, String nombre, String direccion, String correo, String telefono){
+	public Trabajador(String sexo, String horario, String cuenta, String nombre, String direccion, String correo, String telefono, String rfc){
 		super( nombre,direccion, correo,telefono);
 		this.sexo=sexo;
 		this.horario=horario;
@@ -25,6 +25,7 @@ public class Trabajador extends Persona{
 		System.out.print("Sexo: ");sexo=leer.nextLine();
 		System.out.print("Horario: ");horario=leer.nextLine();
 		System.out.print("Cuenta: ");cuenta=leer.nextLine();
+		System.out.println("RFC: ");rfc=leer.nextLine();
 	}
 	@Override
 	public void mostrar(){
@@ -32,6 +33,7 @@ public class Trabajador extends Persona{
 		System.out.println("Sexo: "+sexo);
 		System.out.println("Horario: "+horario);
 		System.out.println("Cuenta: "+cuenta);
+		System.out.println("RFC: "+rfc);
 	}
 	
 	
