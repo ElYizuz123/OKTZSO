@@ -322,6 +322,25 @@ public class Oxxo{
 		}
 
 	}
+	public void mostrarClientes(String cadena){
+		int cont=0;
+		String megaCadena="";
+		Cliente p=new Cliente();
+		for(int i=0; i<cPersonas; i++){
+			if(personas[i].queSoy().equals("Cliente")){
+				cont++;
+				p=(Cliente)personas[i];
+				megaCadena=p.getInscripcion()+p.getNombre()+p.getDireccion()+p.getCorreo()+p.getTelefono()+p.getId();
+			}
+			if(megaCadena.contains(cadena)){
+				System.out.println("\n-------CLIENTE "+cont+"-------");
+				p.mostrar();
+				System.out.println("---------------------------------");
+			}
+			megaCadena="";
+		}
+
+	}
 	public void mostrarTrabajadores(String cadena){
 		int cont=0;
 		String megaCadena="";

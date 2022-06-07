@@ -54,10 +54,10 @@ public class Abarrote implements Serializable{
 	}
 	public int getCantidad(){
         return cantidad;
-  }
+	}
 	public void setCantidad(int cantidad){
         this.cantidad=cantidad;
-  }
+	}
 	public void setNombreProducto(String nombreProducto){
 		this.nombreProducto=nombreProducto;
 	}

@@ -1,11 +1,14 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Ap{
 	public static void main(String args[]){
-		int dato2;
+		int dato2=1;
+		boolean cont=true;
 		System.out.println("\n\nBIENVENIDOS");
 		System.out.println("\"Para todas tus reuniones OXXO\"");
 		Oxxo okzo = new Oxxo("NHB770831BW3", "4433252790", "https://www.oxxo.com");
 		do{
+			try{
 			dato2=mostrarMenu();
 			Scanner leer=new Scanner(System.in);
 			String cadena;
@@ -21,6 +24,7 @@ public class Ap{
 				case 21: okzo.mostrarProveedores(); break;
 				case 31: okzo.mostrarClientes(); break;
 				case 32: okzo.capturarCliente(); break;
+				case 33: System.out.print("\nPALABRA A BUSCAR: ");cadena=leer.nextLine();okzo.mostrarClientes(cadena);break;
 				case 34: okzo.editarCliente(); break;
 				case 42: okzo.capturarVenta(); break;
 				case 41: okzo.mostrarVentas(); break;
@@ -29,6 +33,13 @@ public class Ap{
 				case 52: okzo.capturarCompra(); break;
 				case 53: System.out.print("\nPALABRA A BUSCAR: ");cadena=leer.nextLine();okzo.mostrarCompras(cadena);break;
 				case 60: okzo.mostrarInventario(); break;
+			}
+			cont=false;
+			}
+			catch(InputMismatchException e){
+				System.err.println(e);
+                System.out.println("Ingresa el tipo de dato correcto");
+
 			}
 		}while(dato2!=0);
 		okzo.guardarProveedor();
@@ -48,12 +59,12 @@ public class Ap{
 				System.out.println("\n1.-TRABAJADORES   ||   2.-PROVEEDORES   ||   3.-COMPRAS   ||   4.-MOSTRAR INVENTARIO   ||   5.-SALIR");
 				System.out.print("Opcion: ");dato=leer.nextInt();
 				if(dato==1){
-					System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-ELIMINAR   ||   5.-SALIR");
+					System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-EDITAR   ||   5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt();
 					return dato;
 				}
 				else if(dato==2){
-					System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-ELIMINAR   ||   5.-SALIR");
+					System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-EDITAR   ||   5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt()+10;
 					return dato;
 				}
@@ -73,7 +84,7 @@ public class Ap{
 				return dato+20;
 			}
 			if(dato==2){
-				System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-ELIMINAR   ||   5.-SALIR");
+				System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-EDITAR   ||   5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt();
 					return dato+30;
 			}
@@ -88,7 +99,8 @@ public class Ap{
 				return dato;
 			}
 			break;
+			case 3:return 0;
 		}
-		return 0;
+		return -5;
 	}
 }

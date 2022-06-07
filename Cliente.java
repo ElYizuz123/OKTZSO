@@ -16,8 +16,8 @@ public class Cliente extends Persona{
 	}
 	@Override
 	public void mostrar(){
-		System.out.println("Sexo: "+sexo);
-		System.out.println("ID: "+id);
+		System.out.println("Sexo       : "+sexo);
+		System.out.println("ID         : "+id);
 		System.out.println("Inscripcion: "+inscripcion);
 		super.mostrar();
 	}
@@ -25,8 +25,8 @@ public class Cliente extends Persona{
 	public void capturar(){
 		Scanner ent=new Scanner(System.in);
 		super.capturar();
-		System.out.print("Sexo: ");sexo=ent.nextLine().charAt(0);
-		System.out.print("ID: ");id=ent.nextLine();
+		System.out.print("Sexo       : ");sexo=ent.nextLine().charAt(0);
+		System.out.print("ID         : ");id=ent.nextLine();
 		System.out.print("Inscripcion: ");inscripcion=ent.nextLine();
 	}
 	public String queSoy(){

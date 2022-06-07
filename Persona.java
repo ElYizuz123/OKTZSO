@@ -19,15 +19,15 @@ public abstract class Persona implements Interface, Serializable{
 	public abstract String queSoy();
 	public void capturar(){
 		Scanner leer= new Scanner(System.in);
-		System.out.print("Nombre: ");nombre=leer.nextLine();
-		System.out.print("Correo: ");correo=leer.nextLine();
-		System.out.print("Telefono: ");telefono=leer.nextLine();
+		System.out.print("Nombre   : ");nombre=leer.nextLine();
+		System.out.print("Correo   : ");correo=leer.nextLine();
+		System.out.print("Telefono : ");telefono=leer.nextLine();
 		System.out.print("Direccion: ");direccion=leer.nextLine();
 	}
 	public void mostrar(){
-		System.out.println("Nombre: "+nombre);
-		System.out.println("Correo: "+correo);
-		System.out.println("Telefono: "+telefono);
+		System.out.println("Nombre   : "+nombre);
+		System.out.println("Correo   : "+correo);
+		System.out.println("Telefono : "+telefono);
 		System.out.println("Direccion: "+direccion);
 	}
 
