@@ -34,17 +34,20 @@ public class Detalle implements Interface, Serializable{
 			ser.mostrar();
 		}
 	}
+	public void mostrarServ(){
+		ser.mostrarServicio();
+	}
 
 	public String queSoy(){
 		return "Detalle";
 	}
 	public void capturar(){
-		
+
 	}
 	public void capturar(Inventario inv){
 		System.out.println("\n----------CAPTURA LA VENTA-----------");
 		Scanner dato=new Scanner(System.in);
-		System.out.println("\n1.-ABARROTE     2.-SERVICIO");
+		System.out.println("\n1.-ABARROTE    ||    2.-SERVICIO");
 		System.out.print("Opcion: "); tipoServicio=dato.nextInt();
 		if(tipoServicio==1){
 			ab.capturar(inv);
