@@ -51,7 +51,7 @@ public class Detalle implements Interface, Serializable{
 		if(tipoServicio==1){
 			ab.capturar(inv);
 			idProducto=ab.getIdProductoComprado();
-			nombreProducto=getNombreProducto();
+			nombreProducto=ab.getNombreProducto();
 			precio=ab.getPrecio();
 			cantidadP=ab.getCantidad();
 			total=ab.getTotal();
