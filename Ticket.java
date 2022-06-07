@@ -50,8 +50,8 @@ public class Ticket extends DatosTicket{
 		}
 		super.mostrar();
 		switch(tipoPago){
-			case 1: System.out.println("\nEFECTIVO M.N              PAGO:   $"+pago);
-							System.out.println("                          CAMBIO: $"+String.format("%.2f", cambio));
+			case 1: System.out.println("\nEFECTIVO M.N               PAGO:   $"+pago);
+							System.out.println("                           CAMBIO: $"+String.format("%.2f", cambio));
 			break;
 
 			case 2: System.out.println("\nPAGO ELECTRONICO: "+String.format("%.2f", super.getTotal()));
@@ -105,7 +105,7 @@ public class Ticket extends DatosTicket{
 				System.out.print("INGRESA NUEVAMENTE EL PAGO: $"); pago=ent.nextDouble();
 			}
 			cambio=pago-super.getTotal();
-			System.out.println("CAMBIO: $"+String.format("%.2f", cambio));;
+			System.out.println("CAMBIO: $"+String.format("%.2f", cambio));
 		}
 		System.out.println("---------------------------------");
 	}
