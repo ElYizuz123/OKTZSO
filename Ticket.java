@@ -7,6 +7,9 @@ public class Ticket extends DatosTicket{
 	private int tipoPago;
 	private String numeroTarjeta;
 	private boolean buscador=false;
+	private double cambio;
+	private double pago;
+
 
 	public Ticket(String rfcTrabajador, String fecha, String hora, double total, double subTotal, double ivaTotal, int folio){
 		super(fecha, hora, total, subTotal, ivaTotal, folio);
@@ -47,10 +50,11 @@ public class Ticket extends DatosTicket{
 		}
 		super.mostrar();
 		switch(tipoPago){
-			case 1: System.out.println("\nEFECTIVO M.N");
+			case 1: System.out.println("\nEFECTIVO M.N              PAGO:   $"+pago);
+							System.out.println("                          CAMBIO: $"+String.format("%.2f", cambio));
 			break;
 
-			case 2: System.out.println("\nPAGO ELECTRONICO");
+			case 2: System.out.println("\nPAGO ELECTRONICO: "+String.format("%.2f", super.getTotal()));
 							System.out.println("REF: "+numeroTarjeta);
 			break;
 		}
@@ -67,7 +71,8 @@ public class Ticket extends DatosTicket{
 	public void capturar(Inventario inv, int cCompras){
 		Scanner ent=new Scanner(System.in);
 		Detalle det=new Detalle();
-		System.out.print("\nRFC DEL TRABAJADOR: ");rfcTrabajador=ent.nextLine();
+		System.out.println("\n----------CAPTURA LA VENTA-----------");
+		System.out.print("RFC DEL TRABAJADOR: ");rfcTrabajador=ent.nextLine();
 		int detalle=0;
 		do{
 			detalles[cDetalles]=new Detalle();
@@ -83,14 +88,26 @@ public class Ticket extends DatosTicket{
 			System.out.print("Opcion: ");
 			detalle=ent.nextInt();ent.nextLine();
 		} while(detalle!=2);
-		System.out.print("\nTIPO DE PAGO\n1.- EFECTIVO  ||  2.- TARJETA\n");
+		super.capturar(cCompras);
+		System.out.println("\n---------------------------------");
+		System.out.println("TOTAL: $"+super.getTotal());
+		System.out.print("\n1.- EFECTIVO  ||  2.- TARJETA\n");
 		System.out.print("Opcion: ");
 		tipoPago=ent.nextInt();ent.nextLine();
+
 		if(tipoPago==2){
 			System.out.print("\nNUMERO DE TARJETA: ");
 			numeroTarjeta=ent.nextLine();
 		}
-		super.capturar(cCompras);
+		else{
+			System.out.print("\nPAGO: $"); pago=ent.nextDouble();
+			while(pago<super.getTotal()){
+				System.out.print("INGRESA NUEVAMENTE EL PAGO: $"); pago=ent.nextDouble();
+			}
+			cambio=pago-super.getTotal();
+			System.out.println("CAMBIO: $"+String.format("%.2f", cambio));;
+		}
+		System.out.println("---------------------------------");
 	}
 	public String getNumeroTarjeta(){
 		return numeroTarjeta;
