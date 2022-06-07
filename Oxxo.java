@@ -118,8 +118,12 @@ public class Oxxo{
 		}
 	}
 	public void capturarVenta(){
+		Scanner leer=new Scanner(System.in);
+		String espacio;
 		ventas[cVentas]=new Ticket();
 		ventas[cVentas].capturar(inv, cVentas);
+		System.out.print("\nPRESIONE ENTER PARA IMPRIMIR EL TICKET");
+		espacio=leer.nextLine();
 		ventas[cVentas].mostrar();
 		cVentas++;
 	}
