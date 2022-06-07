@@ -13,7 +13,7 @@ public class Inventario{
 	private double costo;
 	private String nombreProducto;
 	private String idProducto;
-	public Inventario (){
+	public Inventario(){
 
 	}
 	public void mostrar(){
@@ -54,7 +54,7 @@ public class Inventario{
 		Scanner ent=new Scanner(System.in);
 		productos[cProductos]=new Mercancia();
 		productos[cProductos].capturar();
-		System.out.println("Inserte la cantidad de productos: ");cantidad=ent.nextInt();
+		System.out.print("CANTIDAD: ");cantidad=ent.nextInt();
 		productos[cProductos].setCantidad(cantidad);
 		costo=productos[cProductos].getCosto();
 		nombreProducto=productos[cProductos].getNombreProducto();
@@ -65,10 +65,10 @@ public class Inventario{
 		Scanner ent=new Scanner(System.in);
 		String buscarId;
 		boolean comprobador=false;
-		System.out.print("INSERTE EL ID DEL PRODUCTO: ");buscarId=ent.nextLine();
+		System.out.print("\nID DEL PRODUCTO: ");buscarId=ent.nextLine();
 		for(int i=0; i<cProductos; i++){
 			if(productos[i].getIdProducto().equals(buscarId)){
-				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
+				System.out.print("CANTIDAD: ");cantidad=ent.nextInt();
 				productos[i].setCantidad(productos[i].getCantidad()+cantidad);
 				costo=productos[i].getCosto();
 				nombreProducto=productos[i].getNombreProducto();
@@ -79,10 +79,12 @@ public class Inventario{
 			else
 				comprobador=false;
 		}
-		if(comprobador=false){
+		if(comprobador==false){
 			int opcion;
-			System.out.println("El producto capturado no existe en nuestra lista: 1.-CAPTURAR UNO NUEVO   2.-VOLVER A INTENTAR");opcion=ent.nextInt();
-			if(opcion==1){
+			System.out.println("\nEL PRODUCTO NO EXISTE EN NUESTRA LINEA");
+			System.out.println("1.- INTENTAR DE NUEVO || 2.- CAPTURAR NUEVO PRODUCTO");
+			System.out.print("Opcion: "); opcion=ent.nextInt();
+			if(opcion==2){
 				capturarNuevoProducto();
 			}
 			else{
@@ -94,10 +96,10 @@ public class Inventario{
 		Scanner ent=new Scanner(System.in);
 		String buscarId;
 		boolean comprobador=false;
-		System.out.print("INSERTE EL ID DEL PRODUCTO: ");buscarId=ent.nextLine();
+		System.out.print("\nID DEL PRODUCTO: ");buscarId=ent.nextLine();
 		for(int i=0; i<cProductos; i++){
 			if(productos[i].getIdProducto().equals(buscarId)){
-				System.out.println("Inserte la cantidad de productos");cantidad=ent.nextInt();
+				System.out.print("CANTIDAD: ");cantidad=ent.nextInt();
 				productos[i].setCantidad(productos[i].getCantidad()-cantidad);
 				precio=productos[i].getPrecio();
 				nombreProducto=productos[i].getNombreProducto();
@@ -108,8 +110,8 @@ public class Inventario{
 			else
 				comprobador=false;
 		}
-		if(comprobador=false){
-			System.out.println("El producto capturado no existe en nuestra lista vuelva a intentar");
+		if(comprobador==false){
+			System.out.println("\nEL PRODUCTO NO EXISTE EN NUESTRA LINEA, INTENTE DE NUEVO");
 			restarProductos();
 		}
 	}
