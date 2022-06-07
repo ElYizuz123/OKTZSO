@@ -20,7 +20,7 @@ public class Oxxo{
 	public String hora;
 	public Oxxo(){
 	}
-	
+
 	public Oxxo(String rfc, String telefono, String paginaWeb){
 		this.rfc=rfc;
 		this.telefono=telefono;
@@ -316,7 +316,7 @@ public class Oxxo{
 			}
 			megaCadena="";
 		}
-		
+
 	}
 	public void mostrarTrabajadores(String cadena){
 		int cont=0;
@@ -332,7 +332,7 @@ public class Oxxo{
 				System.out.println("\n-------TRABAJADOR "+cont+"-------");
 				p.mostrar();
 				System.out.println("---------------------------------");
-				
+
 			}
 			megaCadena="";
 		}
@@ -354,7 +354,7 @@ public class Oxxo{
 			}
 			megaCadena="";
 		}
-		
+
 
 	}
 	public void mostrarCompras(String cadena){
@@ -373,7 +373,7 @@ public class Oxxo{
 			}
 			megaCadena="";
 		}
-		
+
 
 	}
 
