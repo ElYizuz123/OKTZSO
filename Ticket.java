@@ -29,10 +29,11 @@ public class Ticket extends DatosTicket{
 			megaCadena="";
 			buscador=false;
 		}
-		
+
 	}
 	public void mostrar(){
-		System.out.println("\n----------------TICKET-----------------");
+		boolean led=false;
+		System.out.println("\n------------------TICKET-------------------");
 		super.mostrarFecha();
 		System.out.println("RFC TRABAJADOR: "+rfcTrabajador+"\n");
 		for(int i=0; i<cDetalles; i++){
@@ -41,6 +42,7 @@ public class Ticket extends DatosTicket{
 			}
 			else{
 				detalles[i].mostrar(false);
+				led=true;
 			}
 		}
 		super.mostrar();
@@ -49,10 +51,18 @@ public class Ticket extends DatosTicket{
 			break;
 
 			case 2: System.out.println("\nPAGO ELECTRONICO");
-			System.out.println("CON LA CUENTA: "+numeroTarjeta);
+							System.out.println("REF: "+numeroTarjeta);
 			break;
 		}
-		System.out.println("---------------------------------------");
+		System.out.println("\nMUCHAS GRACIAS POR SU COMPRA");
+		System.out.println("https://www.oxxo.com");
+		System.out.println("4433252790");
+		System.out.println("-------------------------------------------\n");
+		if(led==true){
+			for(int i=0; i<cDetalles; i++){
+				detalles[i].mostrarServ();
+			}
+		}
 	}
 	public void capturar(Inventario inv, int cCompras){
 		Scanner ent=new Scanner(System.in);
@@ -69,11 +79,11 @@ public class Ticket extends DatosTicket{
 			super.setSubTotal(detalles[cDetalles].getTotal());
 			super.sumarSubTotales();
 			cDetalles++;
-			System.out.println("\n1.- NUEVA VENTA      2.-SALIR");
+			System.out.println("\n1.- NUEVA VENTA   ||   2.-SALIR");
 			System.out.print("Opcion: ");
 			detalle=ent.nextInt();ent.nextLine();
 		} while(detalle!=2);
-		System.out.print("\nTIPO DE PAGO\n1.- EFECTIVO   2.- TARJETA\n");
+		System.out.print("\nTIPO DE PAGO\n1.- EFECTIVO  ||  2.- TARJETA\n");
 		System.out.print("Opcion: ");
 		tipoPago=ent.nextInt();ent.nextLine();
 		if(tipoPago==2){
