@@ -20,8 +20,8 @@ public class Mercancia implements Serializable{
 
 	public void mostrar(){
 		System.out.println("\n---------- PRODUCTO --------------");
-		System.out.println("ID: " +idProducto);
-		System.out.println("NOMBRE: "+nombreProducto);
+		System.out.println("ID      : " +idProducto);
+		System.out.println("NOMBRE  : "+nombreProducto);
 		System.out.println("CANTIDAD: "+cantidad);
 		System.out.println("----------------------------------");
 	}
@@ -29,10 +29,10 @@ public class Mercancia implements Serializable{
 	public void capturar(){
 		Scanner scn = new Scanner (System.in);
 		System.out.println("\n---------------CAPTURAR PRODUCTO----------------");
-		System.out.print("ID: "); idProducto=scn.nextLine();
-		System.out.print("NOMBRE: "); nombreProducto=scn.nextLine();
+		System.out.print("ID              : "); idProducto=scn.nextLine();
+		System.out.print("NOMBRE          : "); nombreProducto=scn.nextLine();
 		System.out.print("COSTO INDIVIDUAL: $");costo=scn.nextDouble();
-		System.out.print("COSTO DE VENTA: $");precio=scn.nextDouble();
+		System.out.print("COSTO DE VENTA  : $");precio=scn.nextDouble();
 		System.out.println("-----------------------------------------------");
 	}
 
