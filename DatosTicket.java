@@ -9,7 +9,7 @@ public abstract class DatosTicket implements Serializable{
 	protected int folio;
 	protected double sumarIva;
 
-	
+
 
 	public DatosTicket(String fecha, String hora, double total, double subTotal, double ivaTotal, int folio){
 	this.fecha=fecha;
@@ -25,11 +25,11 @@ public abstract class DatosTicket implements Serializable{
 
 	}
 	protected void mostrarFecha(){
-		System.out.println(fecha+"   		 "+hora);
+		System.out.println(fecha+"         	           "+hora);
 	}
 	protected void mostrar(){
 		System.out.print("\nFOLIO DE VENTA: "+folio);
-		System.out.println("      TOTAL: $"+total);
+		System.out.println("           TOTAL: $"+total);
 		System.out.println("IVA INCLUIDO: $"+ivaTotal);
 	}
 	protected void capturar(int nFolio){
