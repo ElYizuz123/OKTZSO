@@ -29,35 +29,37 @@ public class FacturaCompra extends DatosTicket{
 	}
 	@Override
 	public void mostrar(){
-		System.out.println("\n----------------COMPRA-----------------");
+		System.out.println("\n------------------COMPRA-------------------");
 		super.mostrarFecha();
-		System.out.println("RFC del proveedor: "+rfcProveedor);
+		System.out.println("RFC PROVEEDOR: "+rfcProveedor+"\n");
 		for(int i=0; i<cDetallesc; i++){
 				detallesc[i].mostrar();
 		}
 		super.mostrar();
-		System.out.println("---------------------------------------");
+		System.out.println("-------------------------------------------");
 	}
 	
 	public void capturar(Inventario inv, int cVentas){
 		Scanner ent=new Scanner(System.in);
+		System.out.println("\n-----------CAPTURA LA COMPRA-----------");
 		System.out.print("\nRFC DEL PROVEEDOR: ");rfcProveedor=ent.nextLine();
 		int op=5;
 		do{
-			detallesc[cDetallesc]=new DetalleC(); 
+			detallesc[cDetallesc]=new DetalleC();
 			detallesc[cDetallesc].capturar(inv);
 			super.setSubTotal(detallesc[cDetallesc].getTotal());
 			super.sumarSubTotales();
 			super.setSumarIva(detallesc[cDetallesc].getTotal());
 			super.sumarIvas();
 			cDetallesc++;
-			System.out.print("Desea Realizar Otra Compra	1.- Si || 2.-No: ");
+			System.out.println("\n1.- NUEVA COMPRA || 2.- SALIR ");
+			System.out.print("Opcion: ");
 			op=ent.nextInt();
 		}while(op!=2);
 		super.capturar(cVentas);
 	}
 
-	
+
 	public String getRfcProveedor(){
 		return rfcProveedor;
 	}
