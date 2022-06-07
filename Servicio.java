@@ -23,18 +23,39 @@ public class Servicio implements Serializable{
 	}
 
 	public void mostrar(){
+		String[] arreglo = new String[36];
+		String totalS=String.valueOf(total);
+		char c;
+		for(int i=0; i<nombreServicio.length(); i++){
+			c=nombreServicio.charAt(i);
+			arreglo[i]=String.valueOf(c);
+		}
+		arreglo[35]="$"+totalS;
+		for(int i=0; i<36; i++){
+			if(arreglo[i]==null)
+				arreglo[i]=" ";
+			System.out.print(arreglo[i]);
+		}
+		System.out.println();
+	}
+	public void mostrarServicio(){
 		switch(tipoServicio){
 			case 1:
-				System.out.println(nombreServicio+"AL NUMERO: "+telefono+"DE $"+total);
-				break;
-			case 2:
-				System.out.println(nombreServicio+"             $"+total);
+				System.out.println("------------RECARGA TELEFONICA-------------");
+				System.out.println("ABONO DE $"+total+" MX");
+				System.out.println("AUTORIZACION EN LINEA");
+				System.out.println("TELEFONO ABONADO: "+telefono);
+				System.out.println("-------------------------------------------");
 				break;
 			case 3:
-				System.out.println(nombreServicio+"A LA CUENTA: "+cuentaReceptora+"DE $"+total);
-			
+				System.out.println("------------DEPOSITO BANCARIO--------------");
+				System.out.println("REFERENCIA        : "+cuentaReceptora);
+				System.out.println("MONTO             : $"+total);
+				System.out.println("COMISION DEL BANCO: $8.62");
+				System.out.println("IVA DE COMISION   : $1.38");
+				System.out.println("PAGO TOTAL        : "+(total+10));
+				System.out.println("-------------------------------------------");
 		}
-		
 	}
 	public void capturar(){
 		Scanner leer=new Scanner(System.in);
