@@ -4,7 +4,7 @@ public class Ap{
 		int dato2;
 		System.out.println("\n\nBIENVENIDOS");
 		System.out.println("\"Para todas tus reuniones OXXO\"");
-		Oxxo okzo = new Oxxo("NHB770831BW3", "8183202020", "https://www.oxxo.com");
+		Oxxo okzo = new Oxxo("NHB770831BW3", "4433252790", "https://www.oxxo.com");
 		do{
 			dato2=mostrarMenu();
 			Scanner leer=new Scanner(System.in);
@@ -41,25 +41,25 @@ public class Ap{
 	public static int mostrarMenu(){
 		Scanner leer=new Scanner(System.in);
 		int dato=0;
-		System.out.println("\n1.- GERENTE      2.-TRABAJADOR      3.-SALIR");
+		System.out.println("\n1.- GERENTE   ||   2.-TRABAJADOR   ||   3.-SALIR");
 		System.out.print("Opcion: ");dato=leer.nextInt();
 		switch(dato){
 			case 1:
-				System.out.println("\n1.-TRABAJADORES       2.-PROVEEDORES       3.-COMPRAS          4.-MOSTRAR INVENTARIO     5.-SALIR");
+				System.out.println("\n1.-TRABAJADORES   ||   2.-PROVEEDORES   ||   3.-COMPRAS   ||   4.-MOSTRAR INVENTARIO   ||   5.-SALIR");
 				System.out.print("Opcion: ");dato=leer.nextInt();
 				if(dato==1){
-					System.out.println("\n1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR");
+					System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-ELIMINAR   ||   5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt();
 					return dato;
 				}
 				else if(dato==2){
-					System.out.println("\n1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR");
+					System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-ELIMINAR   ||   5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt()+10;
 					return dato;
 				}
 				else if(dato==3){
-					System.out.println("1.-MOSTRAR      2.-CAPTURAR      3.-BUSCAR");
-					System.out.println("Opcion: ");
+					System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR");
+					System.out.print("Opcion: ");
 					return 50+leer.nextInt();
 				}
 				else if(dato==4){
@@ -67,29 +67,26 @@ public class Ap{
 				}
 			break;
 			case 2:
-			System.out.println("\n1.-MOSTRAR PROVEEDORES     2.-CLIENTES      3.-VENTA       4.-COMPRA      5.-SALIR");
+			System.out.println("\n1.-MOSTRAR PROVEEDORES   ||   2.-CLIENTES   ||   3.-VENTA   ||   4.-COMPRA   ||   5.-SALIR");
 			System.out.print("Opcion: "); dato=leer.nextInt();
 			if(dato==1){
 				return dato+20;
 			}
 			if(dato==2){
-				System.out.println("\n1.-MOSTRAR       2.-CAPTURAR     3.-BUSCAR     4.-ELIMINAR     5.-SALIR");
+				System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-ELIMINAR   ||   5.-SALIR");
 					System.out.print("Opcion: ");dato=leer.nextInt();
 					return dato+30;
 			}
 			else if(dato==3){
-				System.out.println("\n1.-MOSTRAR      2.-CAPTURAR     3.-BUSCAR     4.-SALIR");
+				System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-SALIR");
 				System.out.print("Opcion: ");
 				return 40+leer.nextInt();
 			}
 			else if(dato==4){
-				System.out.println("1.-MOSTRAR      2.-CAPTURAR       3.-BUSCAR      4.-SALIR");
-				System.out.println("Opcion: ");dato=leer.nextInt()+50;
+				System.out.println("\n1.-MOSTRAR   ||   2.-CAPTURAR   ||   3.-BUSCAR   ||   4.-SALIR");
+				System.out.print("Opcion: ");dato=leer.nextInt()+50;
 				return dato;
 			}
-			break;
-			case 3:
-
 			break;
 		}
 		return 0;
