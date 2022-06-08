@@ -29,10 +29,22 @@ public class Abarrote implements Serializable{
 			c=nombreProducto.charAt(i);
 			arreglo[i]=String.valueOf(c);
 		}
+
 		for(int i=0; i<cantidadS.length(); i++){
 			c=cantidadS.charAt(i);
 			arreglo[cont]=String.valueOf(c);
 			cont++;
+
+		if(cantidadS.length()==1){
+			arreglo[25]=cantidadS;
+		}
+		else{
+			for(int i=0; i<cantidadS.length(); i++){
+				c=cantidadS.charAt(i);
+				arreglo[cont]=String.valueOf(c);
+				cont++;
+			}
+
 		}
 		arreglo[35]="$"+totalS;
 		for(int i=0; i<36; i++){
