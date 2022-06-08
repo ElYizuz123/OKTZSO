@@ -95,12 +95,30 @@ public class Inventario{
 	public void restarProductos(){
 		Scanner ent=new Scanner(System.in);
 		String buscarId;
-		boolean comprobador=false;
+		int dato=0;
+		boolean comprobador=false, comprobador2=false;
 		System.out.print("\nID DEL PRODUCTO: ");buscarId=ent.nextLine();
 		for(int i=0; i<cProductos; i++){
 			if(productos[i].getIdProducto().equals(buscarId)){
-				System.out.print("CANTIDAD: ");cantidad=ent.nextInt();
-				productos[i].setCantidad(productos[i].getCantidad()-cantidad);
+				do{
+					System.out.print("CANTIDAD: ");cantidad=ent.nextInt();
+					productos[i].setCantidad(productos[i].getCantidad()-cantidad);
+					if(productos[i].getCantidad()<0){
+						System.out.println("LA CANTIDAD DE PRODUCTOS EXCEDE NUESTRO INVENTARIO");
+						productos[i].setCantidad(productos[i].getCantidad()+cantidad);
+						System.out.println("CANTIDAD DISPONIBLE: "+productos[i].getCantidad());
+						System.out.println("1.-INTENTE DE NUEVO      2.-CANCELAR");
+						dato=ent.nextInt();
+						if(dato==1)
+							comprobador2=false;
+						else{
+							comprobador2=true;
+							break;
+						}
+					}
+					else
+						comprobador2=true;
+				}while(comprobador2==false);
 				precio=productos[i].getPrecio();
 				nombreProducto=productos[i].getNombreProducto();
 				idProducto=productos[i].getIdProducto();

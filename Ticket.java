@@ -19,6 +19,14 @@ public class Ticket extends DatosTicket{
 	public Ticket(){
 
 	}
+	public String queSoy(){
+		return "Compra";
+	}
+	public void capturar(){
+		Scanner ent=new Scanner(System.in);
+		System.out.println("\n----------CAPTURA LA VENTA-----------");
+		System.out.print("RFC DEL TRABAJADOR: ");rfcTrabajador=ent.nextLine();
+	}
 	public void buscarDetalles(String cadena){
 		String megaCadena="";
 		Detalle p=new Detalle();
@@ -54,7 +62,7 @@ public class Ticket extends DatosTicket{
 							System.out.println("                           CAMBIO: $"+String.format("%.2f", cambio));
 			break;
 
-			case 2: System.out.println("\nPAGO ELECTRONICO: "+String.format("%.2f", super.getTotal()));
+			case 2: System.out.println("\nPAGO ELECTRONICO: $"+String.format("%.2f", super.getTotal()));
 							System.out.println("REF: "+numeroTarjeta);
 			break;
 		}
@@ -71,8 +79,7 @@ public class Ticket extends DatosTicket{
 	public void capturar(Inventario inv, int cCompras){
 		Scanner ent=new Scanner(System.in);
 		Detalle det=new Detalle();
-		System.out.println("\n----------CAPTURA LA VENTA-----------");
-		System.out.print("RFC DEL TRABAJADOR: ");rfcTrabajador=ent.nextLine();
+		capturar();
 		int detalle=0;
 		do{
 			detalles[cDetalles]=new Detalle();

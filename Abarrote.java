@@ -20,6 +20,7 @@ public class Abarrote implements Serializable{
 		return "Abarrote";
 	}
 	public void mostrar(){
+		int cont=35;
 		String[] arreglo = new String[36];
 		String cantidadS=String.valueOf(cantidad);
 		String totalS=String.valueOf(total);
@@ -28,7 +29,11 @@ public class Abarrote implements Serializable{
 			c=nombreProducto.charAt(i);
 			arreglo[i]=String.valueOf(c);
 		}
-		arreglo[25]=cantidadS;
+		for(int i=0; i<cantidadS.length(); i++){
+			c=cantidadS.charAt(i);
+			arreglo[cont]=String.valueOf(c);
+			cont++;
+		}
 		arreglo[35]="$"+totalS;
 		for(int i=0; i<36; i++){
 			if(arreglo[i]==null)
@@ -54,10 +59,10 @@ public class Abarrote implements Serializable{
 	}
 	public int getCantidad(){
         return cantidad;
-  }
+	}
 	public void setCantidad(int cantidad){
         this.cantidad=cantidad;
-  }
+	}
 	public void setNombreProducto(String nombreProducto){
 		this.nombreProducto=nombreProducto;
 	}

@@ -1,6 +1,6 @@
 
 import java.io.Serializable;
-public abstract class DatosTicket implements Serializable{
+public abstract class DatosTicket implements Serializable, Interface{
 	protected String fecha;
 	protected String hora;
 	protected double total;
@@ -18,19 +18,20 @@ public abstract class DatosTicket implements Serializable{
 	this.folio=folio;
 
 	}
-
+	
+	public abstract String queSoy();
 	public DatosTicket(){
 
 	}
 	protected void mostrarFecha(){
 		System.out.println(fecha+"         	           "+hora);
 	}
-	protected void mostrar(){
+	public void mostrar(){
 		System.out.print("\nFOLIO DE VENTA: "+folio);
 		System.out.println("           TOTAL: $"+String.format("%.2f", total));
 		System.out.println("IVA INCLUIDO: $"+String.format("%.2f", ivaTotal));
 	}
-	protected void capturar(int nFolio){
+	public void capturar(int nFolio){
 		ivaTotal=ivaTotal*0.16;
 		total=total+ivaTotal;
 		folio=nFolio;

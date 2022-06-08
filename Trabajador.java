@@ -22,18 +22,18 @@ public class Trabajador extends Persona{
 	public void capturar(){
 		Scanner leer=new Scanner(System.in);
 		super.capturar();
-		System.out.print("Sexo: ");sexo=leer.nextLine();
+		System.out.print("Sexo   : ");sexo=leer.nextLine();
 		System.out.print("Horario: ");horario=leer.nextLine();
-		System.out.print("Cuenta: ");cuenta=leer.nextLine();
-		System.out.println("RFC: ");rfc=leer.nextLine();
+		System.out.print("Cuenta : ");cuenta=leer.nextLine();
+		System.out.print("RFC    : ");rfc=leer.nextLine();
 	}
 	@Override
 	public void mostrar(){
 		super.mostrar();
-		System.out.println("Sexo: "+sexo);
+		System.out.println("Sexo   : "+sexo);
 		System.out.println("Horario: "+horario);
-		System.out.println("Cuenta: "+cuenta);
-		System.out.println("RFC: "+rfc);
+		System.out.println("Cuenta : "+cuenta);
+		System.out.println("RFC    : "+rfc);
 	}
 	
 	

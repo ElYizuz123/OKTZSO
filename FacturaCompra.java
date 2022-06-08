@@ -27,6 +27,15 @@ public class FacturaCompra extends DatosTicket{
 	public FacturaCompra(){
 
 	}
+	public void capturar(){
+		Scanner ent=new Scanner(System.in);
+		System.out.println("\n-----------CAPTURA LA COMPRA-----------");
+		System.out.print("\nRFC DEL PROVEEDOR: ");rfcProveedor=ent.nextLine();
+	}
+	@Override
+	public String queSoy(){
+		return "Venta";
+	}
 	@Override
 	public void mostrar(){
 		System.out.println("\n------------------COMPRA-------------------");
@@ -41,8 +50,7 @@ public class FacturaCompra extends DatosTicket{
 	
 	public void capturar(Inventario inv, int cVentas){
 		Scanner ent=new Scanner(System.in);
-		System.out.println("\n-----------CAPTURA LA COMPRA-----------");
-		System.out.print("\nRFC DEL PROVEEDOR: ");rfcProveedor=ent.nextLine();
+		capturar();
 		int op=5;
 		do{
 			detallesc[cDetallesc]=new DetalleC();
