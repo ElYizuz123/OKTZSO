@@ -53,7 +53,7 @@ public class Servicio implements Serializable{
 				System.out.println("MONTO             : $"+total);
 				System.out.println("COMISION DEL BANCO: $8.62");
 				System.out.println("IVA DE COMISION   : $1.38");
-				System.out.println("PAGO TOTAL        : $"+(total+10));
+				System.out.println("PAGO TOTAL        : "+(total+10));
 				System.out.println("-------------------------------------------");
 		}
 	}

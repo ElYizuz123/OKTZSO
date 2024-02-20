@@ -21,26 +21,17 @@ public class DetalleC implements Interface, Serializable{
 	}
 
 	public void mostrar(){
-		int cont=25;
 		String[] arreglo = new String[36];
 		String cantidadS=String.valueOf(cantidad);
 		String totalS=String.valueOf(total);
 		char c;
 		for(int i=0; i<nombreP.length(); i++){
+			arreglo[i]=" ";
 			c=nombreP.charAt(i);
 			arreglo[i]=String.valueOf(c);
 		}
-		if(cantidadS.length()==1){
-			arreglo[25]=cantidadS;
-		}
-		else{
-			for(int i=0; i<cantidadS.length(); i++){
-				c=cantidadS.charAt(i);
-				arreglo[cont]=String.valueOf(c);
-				cont++;
-			}
-		}
-		arreglo[35]="$"+totalS;
+		arreglo[25]=cantidadS;
+		arreglo[34]="$"+totalS;
 		for(int i=0; i<36; i++){
 			if(arreglo[i]==null)
 				arreglo[i]=" ";

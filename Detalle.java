@@ -46,7 +46,7 @@ public class Detalle implements Interface, Serializable{
 	}
 	public void capturar(Inventario inv){
 		Scanner dato=new Scanner(System.in);
-		System.out.println("\n1.- ABARROTE    ||    2.- SERVICIO");
+		System.out.println("\n1.-ABARROTE    ||    2.-SERVICIO");
 		System.out.print("Opcion: "); tipoServicio=dato.nextInt();
 		if(tipoServicio==1){
 			ab.capturar(inv);

@@ -54,7 +54,7 @@ public class Ticket extends DatosTicket{
 							System.out.println("                           CAMBIO: $"+String.format("%.2f", cambio));
 			break;
 
-			case 2: System.out.println("\nPAGO ELECTRONICO: $"+String.format("%.2f", super.getTotal()));
+			case 2: System.out.println("\nPAGO ELECTRONICO: "+String.format("%.2f", super.getTotal()));
 							System.out.println("REF: "+numeroTarjeta);
 			break;
 		}
